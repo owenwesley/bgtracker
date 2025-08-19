@@ -4137,7 +4137,7 @@ export default class NavBar extends Component {
                   },
                   {
                     name: "Unit",
-                    prop: "init",
+                    prop: "unit",
                     type: "text",
                   },
                   {
