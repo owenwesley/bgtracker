@@ -8,6 +8,7 @@ router.post('/:user_id', (req, res) => {
     user_id = req.params.user_id,
     name = req.body.name,
     dose = req.body.dose,
+    unit = req.body.unit,
     quantity = req.body.quantity,
     prescriber = req.body.prescriber,
     am = req.body.am,
@@ -17,14 +18,14 @@ router.post('/:user_id', (req, res) => {
   } = req.query;
 
   const sql =
-    'SET @id=?;SET @user_id=?;SET @name=?;SET @dose=?;SET @quantity=?;\
-    SET @prescriber=?;SET @am=?;SET @noon=?;SET @evening=?;SET @bed=?;\
-     CALL updateMedication(@id,@user_id,@name,@dose,@quantity,@prescriber,\
-      @am,@noon,@evening,@bed);';
+    `SET @id=?;SET @user_id=?;SET @name=?;SET @dose=?;SET @unit=?;
+    SET @quantity=?;SET @prescriber=?;SET @am=?;SET @noon=?;
+    SET @evening=?;SET @bed=?; CALL updateMedication(@id,@user_id,
+    @name,@dose,@unit,@quantity,@prescriber,@am,@noon,@evening,@bed);`;
 
   connection.query(
     sql,
-    [id, user_id, name, dose, quantity, prescriber, am, noon, evening, bed],
+    [id, user_id, name, dose, unit, quantity, prescriber, am, noon, evening, bed],
     (err, results) => {
       if (err) {
         return res.send(err.message);

@@ -670,6 +670,7 @@ export default class NavBar extends Component {
       user_id: user.id,
       name: medications[editIdx].name,
       dose: medications[editIdx].dose,
+      unit: medications[editIdx].unit,
       quantity: medications[editIdx].quantity,
       prescriber: medications[editIdx].prescriber,
       am: medications[editIdx].am,
@@ -1483,19 +1484,19 @@ export default class NavBar extends Component {
       }
       {
         readings[editIdx].chkMedsB ||
-        readings[editIdx].chkMedsL ||
-        readings[editIdx].chkMedsD ||
-        readings[editIdx].chkMedsBed
+          readings[editIdx].chkMedsL ||
+          readings[editIdx].chkMedsD ||
+          readings[editIdx].chkMedsBed
           ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
-              readings,
-              editIdx,
-              medications,
-              totalAm,
-              user,
-              totalNoon,
-              totalEvening,
-              totalBed
-            ))
+            readings,
+            editIdx,
+            medications,
+            totalAm,
+            user,
+            totalNoon,
+            totalEvening,
+            totalBed
+          ))
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -1700,19 +1701,19 @@ export default class NavBar extends Component {
       }
       {
         readings[editIdx].chkMedsB ||
-        readings[editIdx].chkMedsL ||
-        readings[editIdx].chkMedsD ||
-        readings[editIdx].chkMedsBed
+          readings[editIdx].chkMedsL ||
+          readings[editIdx].chkMedsD ||
+          readings[editIdx].chkMedsBed
           ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
-              readings,
-              editIdx,
-              medications,
-              totalAm,
-              user,
-              totalNoon,
-              totalEvening,
-              totalBed
-            ))
+            readings,
+            editIdx,
+            medications,
+            totalAm,
+            user,
+            totalNoon,
+            totalEvening,
+            totalBed
+          ))
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -2837,8 +2838,8 @@ export default class NavBar extends Component {
               ""
             )}
             {(isLogedIn && timesPD === 1 && !chkBP) ||
-            (timesPD === 2 && !chkBP) ||
-            timesPD >= 3 ? (
+              (timesPD === 2 && !chkBP) ||
+              timesPD >= 3 ? (
               <NavBarLink>
                 <StyledButton to={"/a1cchart"}>A1C Chart</StyledButton>
               </NavBarLink>
@@ -4133,6 +4134,11 @@ export default class NavBar extends Component {
                     name: "Dose",
                     prop: "dose",
                     type: "number",
+                  },
+                  {
+                    name: "Unit",
+                    prop: "init",
+                    type: "text",
                   },
                   {
                     name: "Quantity",
