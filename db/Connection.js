@@ -3,11 +3,11 @@ const mysql = require('mysql');
 
 const connection = mysql.createPool({
   connectionLimit: 10000000,
-  host: /*'74.208.32.246', */process.env.DB_HOST,
-  user: /*'owenwesley1976',*/process.env.DB_USER,
-  password: /*'wesleyTeresa@200120', */process.env.DB_PASS,
-  port: /*3306, */process.env.DB_PORT,
-  database: /*'bgtracker', */process.env.DB,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
+  database: process.env.DB,
   multipleStatements: true,
 });
 
