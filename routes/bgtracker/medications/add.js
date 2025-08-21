@@ -21,7 +21,6 @@ router.post('/:user_id', (req, res) => {
      ${quantity},${prescriber},${am},${noon},${evening},${bed});
     CREATE TEMPORARY TABLE tmpmedications(
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,
@@ -31,15 +30,14 @@ router.post('/:user_id', (req, res) => {
       noon int not null,
       evening int not null,
       bed int not null);\
-      INSERT INTO tmpmedications(user_id,date,name,dose,unit,quantity,prescriber,
+      INSERT INTO tmpmedications(user_id,name,dose,unit,quantity,prescriber,
         am,noon,evening,bed)
-        SELECT user_id,date,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
+        SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
         FROM medications;
       DROP TABLE medications;
     CREATE TABLE medications(
       id int not null auto_increment,
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,
@@ -50,9 +48,9 @@ router.post('/:user_id', (req, res) => {
       evening int not null,
       bed int not null,
       primary key (id));\
-    INSERT INTO medications(user_id,date,name,dose,unit,quantity,prescriber,\
+    INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,\
       am,noon,evening,bed)\
-      SELECT user_id,date,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
+      SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
       FROM tmpmedications order by name, user_id;
     DROP TEMPORARY TABLE tmpmedications;`;
 

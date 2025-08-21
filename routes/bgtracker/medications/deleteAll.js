@@ -6,7 +6,6 @@ router.get('/:user_id', (req, res) => {
   const sql = `DELETE FROM medications WHERE user_id=${req.params.user_id};\
   CREATE TEMPORARY TABLE tmpmedications(
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,
@@ -25,7 +24,6 @@ router.get('/:user_id', (req, res) => {
   CREATE TABLE medications(
       id int not null auto_increment,
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,

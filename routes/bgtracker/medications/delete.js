@@ -7,7 +7,6 @@ router.post('/:id', (req, res) => {
     LIMIT 1;
     CREATE TEMPORARY TABLE tmpmedications(
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,
@@ -26,7 +25,6 @@ router.post('/:id', (req, res) => {
     CREATE TABLE medications(
         id int not null auto_increment,
       user_id int not null,
-      date text not null,
       name text not null,
       dose double not null,
       unit text not null,
