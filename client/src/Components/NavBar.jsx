@@ -812,6 +812,14 @@ export default class NavBar extends Component {
       slidingScale5,
       carbRatio,
     } = this.state.preference;
+
+    const {
+      chkMedsB,
+      chkMedsL,
+      chkMedsD,
+      chkMedsBed,
+    } = this.state.medications;
+
     let SugarB = 0,
       SugarL = 0,
       SugarD = 0,
@@ -1483,10 +1491,10 @@ export default class NavBar extends Component {
         }
       }
       {
-        readings[editIdx].chkMedsB ||
-          readings[editIdx].chkMedsL ||
-          readings[editIdx].chkMedsD ||
-          readings[editIdx].chkMedsBed
+        chkMedsB ||
+          chkMedsL ||
+          chkMedsD ||
+          chkMedsBed
           ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
             readings,
             editIdx,
@@ -1700,10 +1708,10 @@ export default class NavBar extends Component {
         await editReading(user, readings, editIdx);
       }
       {
-        readings[editIdx].chkMedsB ||
-          readings[editIdx].chkMedsL ||
-          readings[editIdx].chkMedsD ||
-          readings[editIdx].chkMedsBed
+        chkMedsB ||
+          chkMedsL ||
+          chkMedsD ||
+          chkMedsBed
           ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
             readings,
             editIdx,
