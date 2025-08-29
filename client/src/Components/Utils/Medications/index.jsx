@@ -26,31 +26,40 @@ export const deductMeds = async (
   totalEvening,
   totalBed
 ) => {
-  if (readings[editIdx].chkMedsB === 1) {
+  if (
+    (readings[editIdx].chkMedsB) ||
+    (readings[editIdx].chkMedsB === 1)
+  ) {
     readings[editIdx].chkMedsB = 1;
     for (let i = 0; i < medications.length; i++) {
       totalAm = medications[i].quantity - medications[i].am;
       medications[i].quantity = totalAm;
       await editMeds(user, medications, i);
     }
-  }
-  if (readings[editIdx].chkMedsL === 1) {
+  } else if (
+    (readings[editIdx].chkMedsL) ||
+    (readings[editIdx].chkMedsL === 1)
+  ) {
     readings[editIdx].chkMedsL = 1;
     for (let i = 0; i < medications.length; i++) {
       totalNoon = medications[i].quantity - medications[i].noon;
       medications[i].quantity = totalNoon;
       await editMeds(user, medications, i);
     }
-  }
-  if (readings[editIdx].chkMedsD === 1) {
+  } else if (
+    (readings[editIdx].chkMedsD) ||
+    (readings[editIdx].chkMedsD === 1)
+  ) {
     readings[editIdx].chkMedsD = 1;
     for (let i = 0; i < medications.length; i++) {
-      totalNoon = medications[i].quantity - medications[i].noon;
-      medications[i].quantity = totalNoon;
+      totalEvening = medications[i].quantity - medications[i].evening;
+      medications[i].quantity = totalEvening;
       await editMeds(user, medications, i);
     }
-  }
-  if (readings[editIdx].chkMedsBed === 1) {
+  } else if (
+    (readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsBed === 1)
+  ) {
     readings[editIdx].chkMedsBed = 1;
     for (let i = 0; i < medications.length; i++) {
       totalBed = medications[i].quantity - medications[i].bed;
