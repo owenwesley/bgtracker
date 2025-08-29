@@ -27,8 +27,14 @@ export const deductMeds = async (
   totalBed
 ) => {
   if (
-    (readings[editIdx].chkMedsB) ||
-    (readings[editIdx].chkMedsB === 1)
+    (readings[editIdx].chkMedsB &&
+      !readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      !readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 0 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 0)
   ) {
     readings[editIdx].chkMedsB = 1;
     for (let i = 0; i < medications.length; i++) {
@@ -37,8 +43,14 @@ export const deductMeds = async (
       await editMeds(user, medications, i);
     }
   } else if (
-    (readings[editIdx].chkMedsL) ||
-    (readings[editIdx].chkMedsL === 1)
+    (readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      !readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 0)
   ) {
     readings[editIdx].chkMedsL = 1;
     for (let i = 0; i < medications.length; i++) {
@@ -47,8 +59,30 @@ export const deductMeds = async (
       await editMeds(user, medications, i);
     }
   } else if (
-    (readings[editIdx].chkMedsD) ||
-    (readings[editIdx].chkMedsD === 1)
+    (!readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      !readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 0 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 0)
+  ) {
+    readings[editIdx].chkMedsL = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalNoon = medications[i].quantity - medications[i].noon;
+      medications[i].quantity = totalNoon;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      readings[editIdx].chkMedsD &&
+      !readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 1 &&
+      readings[editIdx].chkMedsBed === 0)
   ) {
     readings[editIdx].chkMedsD = 1;
     for (let i = 0; i < medications.length; i++) {
@@ -57,8 +91,94 @@ export const deductMeds = async (
       await editMeds(user, medications, i);
     }
   } else if (
-    (readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsBed === 1)
+    (!readings[editIdx].chkMedsB &&
+      !readings[editIdx].chkMedsL &&
+      readings[editIdx].chkMedsD &&
+      !readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 0 &&
+      readings[editIdx].chkMedsL === 0 &&
+      readings[editIdx].chkMedsD === 1 &&
+      readings[editIdx].chkMedsBed === 0)
+  ) {
+    readings[editIdx].chkMedsD = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalEvening = medications[i].quantity - medications[i].evening;
+      medications[i].quantity = totalEvening;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (!readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 0 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 1)
+  ) {
+    readings[editIdx].chkMedsBed = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalBed = medications[i].quantity - medications[i].bed;
+      medications[i].quantity = totalBed;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (readings[editIdx].chkMedsB &&
+      !readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 0 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 1)
+  ) {
+    readings[editIdx].chkMedsBed = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalBed = medications[i].quantity - medications[i].bed;
+      medications[i].quantity = totalBed;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (!readings[editIdx].chkMedsB &&
+      !readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 0 &&
+      readings[editIdx].chkMedsL === 0 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 1)
+  ) {
+    readings[editIdx].chkMedsBed = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalBed = medications[i].quantity - medications[i].bed;
+      medications[i].quantity = totalBed;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      !readings[editIdx].chkMedsD &&
+      readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 0 &&
+      readings[editIdx].chkMedsBed === 1)
+  ) {
+    readings[editIdx].chkMedsBed = 1;
+    for (let i = 0; i < medications.length; i++) {
+      totalBed = medications[i].quantity - medications[i].bed;
+      medications[i].quantity = totalBed;
+      await editMeds(user, medications, i);
+    }
+  } else if (
+    (readings[editIdx].chkMedsB &&
+      readings[editIdx].chkMedsL &&
+      readings[editIdx].chkMedsD &&
+      readings[editIdx].chkMedsBed) ||
+    (readings[editIdx].chkMedsB === 1 &&
+      readings[editIdx].chkMedsL === 1 &&
+      readings[editIdx].chkMedsD === 1 &&
+      readings[editIdx].chkMedsBed === 1)
   ) {
     readings[editIdx].chkMedsBed = 1;
     for (let i = 0; i < medications.length; i++) {
