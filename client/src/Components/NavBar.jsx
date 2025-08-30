@@ -1700,10 +1700,10 @@ export default class NavBar extends Component {
         await editReading(user, readings, editIdx);
       }
       {
-        chkMedsB ||
-          chkMedsL ||
-          chkMedsD ||
-          chkMedsBed
+        readings[editIdx].chkMedsB ||
+          readings[editIdx].chkMedsL ||
+          readings[editIdx].chkMedsD ||
+          readings[editIdx].chkMedsBed
           ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
             readings,
             editIdx,
