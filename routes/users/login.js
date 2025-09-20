@@ -2,14 +2,13 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../../db/Connection');
 const bcrypt = require('bcryptjs');
-
-const SELECT_USER_QUERY = 'SELECT * FROM users';
+const { selectUser } = require('../../db/sql/users');
 
 router.post('/', (req, res) => {
-  let { userName, password = req.body.password } = req.query;
+  let { userName, password } = req.body;
 
-  connection.query(
-    SELECT_USER_QUERY + ` WHERE userName=?`,
+  bgtracker.query(
+    selectUser + ` WHERE userName=?`,
     [userName],
     (error, results) => {
       if (error) throw error;

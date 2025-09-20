@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../../../db/Connection');
+const { updateReading } = require('../../../db/sql/bgtracker/readings');
+const { bgtracker } = require('../../../db/db');
 
 router.post('/:user_id', (req, res) => {
   const {
@@ -32,48 +33,12 @@ router.post('/:user_id', (req, res) => {
     chkMedsBed = req.body.chkMedsBed,
   } = req.query;
 
-  const sql = `SET @id=?;SET @user_id=?;SET @date=?;SET @sugarB=?;SET\
-     @carbsB=?;SET @insulinB=?;SET @insulinSB=?;SET @insulinFB=?;
-     SET @chkMedsB=?;SET @sugarL=?;SET @carbsL=?;SET @insulinL=?;
-     SET @chkMedsL=?;SET @sugarD=?;SET @carbsD=?;SET @insulinD=?;
-     SET @chkMedsD=?;SET @sugarBB=?;SET @carbsBB=?;SET @insulinBB=?;
-     SET @sugarBed=?;SET @carbsBed=?;SET @insulinBed=?;SET @insulinSBed=?;
-     SET @insulinFBed=?;SET @chkMedsBed=?;\
-      CALL updateReading(@id,@user_id,@date,@sugarB,@carbsB,@insulinB,\
-        @insulinSB,@insulinFB,@chkMedsB,@sugarL,@carbsL,@insulinL,@chkMedsL,
-        @sugarD,@carbsD,@insulinD,@chkMedsD,@sugarBB,@carbsBB,@insulinBB,
-        @sugarBed,@carbsBed,@insulinBed,@insulinSBed,@insulinFBed,
-        @chkMedsBed);`;
-
-  connection.query(
-    sql,
-    [
-      id,
-      user_id,
-      date,
-      sugarB,
-      carbsB,
-      insulinB,
-      insulinSB,
-      insulinFB,
-      chkMedsB,
-      sugarL,
-      carbsL,
-      insulinL,
-      chkMedsL,
-      sugarD,
-      carbsD,
-      insulinD,
-      chkMedsD,
-      sugarBB,
-      carbsBB,
-      insulinBB,
-      sugarBed,
-      carbsBed,
-      insulinBed,
-      insulinSBed,
-      insulinFBed,
-      chkMedsBed,
+  bgtracker.query(
+    updateReading,
+    [id, user_id, date, sugarB, carbsB, insulinB, insulinSB, insulinFB,
+      chkMedsB, sugarL, carbsL, insulinL, chkMedsL, sugarD, carbsD,
+      insulinD, chkMedsD, sugarBB, carbsBB, insulinBB, sugarBed, carbsBed,
+      insulinBed, insulinSBed, insulinFBed, chkMedsBed
     ],
     (err, results, rows) => {
       if (err) {

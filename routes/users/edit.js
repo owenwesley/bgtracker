@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../../db/Connection');
 const bcrypt = require('bcryptjs');
+const { updateUser } = require('../../db/sql/users');
 
 const UPDATE_USERS_QUERY =
   'UPDATE users SET firstName=?,lastName=?,userName=?,password=?,email=?';
@@ -19,8 +20,8 @@ router.post('/:id', (req, res) => {
   bcrypt.hash(password, salt, (err, hashPass) => {
     if (err) throw err;
 
-    connection.query(
-      UPDATE_USERS_QUERY + ` WHERE id=${req.params.id}`,
+    bgtracker.query(
+      updateUser + ` WHERE id=${req.params.id}`,
       [firstName, lastName, userName, hashPass, email],
       (err, results, fields) => {
         if (err) {
