@@ -1,4 +1,4 @@
-export const createMeetingsTbl =
+const createMeetingsTbl =
   `CREATE TABLE IF NOT EXISTS meetings(
         id int not null auto_increment,
         user_id int not null,
@@ -29,7 +29,7 @@ export const createMeetingsTbl =
         deposit double not null default(0.00),
         primary key (id));`;
 
-export const copyMeetingsTable =
+const copyMeetingsTable =
   `CREATE TEMPORARY TABLE tmpmeetings(
         user_id int not null,
         date text not null,
@@ -102,24 +102,24 @@ export const copyMeetingsTable =
       FROM tmpmeetings order by date, user_id;
     DROP TEMPORARY TABLE tmpmeetings;`;
 
-export const deleteAllMeetings =
+const deleteAllMeetings =
   `DELETE FROM meetings WHERE user_id=?;
   ${copyMeetingsTable}`;
 
-export const deleteMeetings =
+const deleteMeetings =
   `DELETE FROM meetings WHERE user_id=?;
      ORDER BY id LIMIT 1;
      ${copyMeetingsTable}`;
 
-export const insertMeeting =
+const insertMeeting =
   `INSERT INTO meetings (user_id,date,chair,coChair,newCommer,
       day30,day60,day90,month6,month9,month12,month18,multiyr,
       gc1,gc2,gc3,gc4,gc5,gc6,gc7,gc8,gc9,gc10,attendace,memo,deposit)
        values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-export const selectMeetings = `SELECT * from meetings`;
+const selectMeetings = `SELECT * from meetings`;
 
-export const updateMeeting =
+const updateMeeting =
   `SET @id=?;SET @user_id=?;SET @date=?;SET @chair=?;
     SET @coChair=?;SET @newCommer=?;SET @day30=?;SET @day60=?;
     SET @day90=?;SET @month6=?;SET @month9=?;SET @month12=?;
@@ -130,3 +130,13 @@ export const updateMeeting =
      @day30,@day60,@day90,@month6,@month9,@month12,@month18,@multiyr,
      @gc1,@gc2,@gc3,@gc4,@gc5,@gc6,@gc7,@gc8,@gc9,@gc10,@attendance,
      @memo,@deposit);`;
+
+module.exports = {
+  copyMeetingsTable,
+  createMeetingsTbl,
+  deleteAllMeetings,
+  deleteMeetings,
+  insertMeeting,
+  selectMeetings,
+  updateMeeting
+}
