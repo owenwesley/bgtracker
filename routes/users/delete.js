@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../../db/Connection');
 const { deleteUserById } = require('../../db/sql/users');
+const { bgtracker } = require('../../db/db');
 
 router.get('/:id', (req, res) => {
   bgtracker.query(

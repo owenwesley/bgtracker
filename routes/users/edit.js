@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../../db/Connection');
 const bcrypt = require('bcryptjs');
 const { updateUser } = require('../../db/sql/users');
+const { bgtracker } = require('../../db/db');
 
 const UPDATE_USERS_QUERY =
   'UPDATE users SET firstName=?,lastName=?,userName=?,password=?,email=?';

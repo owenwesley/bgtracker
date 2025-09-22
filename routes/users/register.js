@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../../db/Connection');
 const bcrypt = require('bcryptjs');
 const { insertUser } = require('../../db/sql/users');
+const { bgtracker } = require('../../db/db');
 
 router.post('/', (req, res) => {
   const {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../../db/Connection');
 const { selectNutritions } = require('../../db/sql/bgtracker/nutritions');
+const { bgtracker } = require('../../db/db');
 
 // Middleware
 router.use('/add', require('./nutritions/add'));
