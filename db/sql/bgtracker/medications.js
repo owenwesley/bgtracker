@@ -32,11 +32,10 @@ const copyMedicationsTable =
     INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
       am,noon,evening,bed)
       SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
-      FROM tmpmedications order by name, user_id asc;
+      FROM tmpmedications order by name, user_id;
     DROP TEMPORARY TABLE tmpmedications;`;
 
-const deleteMedication = `DELETE FROM medications WHERE id=?;
-    LIMIT 1;
+const deleteMedication = `DELETE FROM medications WHERE id=? LIMIT 1;
     ${copyMedicationsTable}`;
 
 const deleteAllMedications =
