@@ -14,7 +14,7 @@ const copyMedicationsTable =
       prescriber,am,noon,evening,bed)
         SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,
         evening,bed 
-        FROM medications;
+        FROM medications order by name asc;
       DROP TABLE medications;
     CREATE TABLE medications(
       id int not null auto_increment,
@@ -32,7 +32,7 @@ const copyMedicationsTable =
     INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
       am,noon,evening,bed)
       SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
-      FROM tmpmedications order by name asc;
+      FROM tmpmedications;
     DROP TEMPORARY TABLE tmpmedications;`;
 
 const deleteMedication = `DELETE FROM medications WHERE id=? LIMIT 1;
