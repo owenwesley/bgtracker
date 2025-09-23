@@ -16,7 +16,15 @@ const copyMedicationsTable =
         evening,bed 
         FROM medications order by name asc;
       DROP TABLE medications;
-    CREATE TABLE medications(
+      ${createMedicationsTbl}
+    INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
+      am,noon,evening,bed)
+      SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
+      FROM tmpmedications;
+    DROP TEMPORARY TABLE tmpmedications;`;
+
+const createMedicationsTbl =
+  `CREATE TABLE IF NOT EXISTS medications(
       id int not null auto_increment,
       user_id int not null,
       name text not null,
@@ -28,12 +36,7 @@ const copyMedicationsTable =
       noon int not null,
       evening int not null,
       bed int not null,
-      primary key (id));
-    INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
-      am,noon,evening,bed)
-      SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
-      FROM tmpmedications;
-    DROP TEMPORARY TABLE tmpmedications;`;
+      primary key (id));`;
 
 const deleteMedication = `DELETE FROM medications WHERE id=? LIMIT 1;
     ${copyMedicationsTable}`;
