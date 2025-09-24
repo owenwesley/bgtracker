@@ -32,7 +32,7 @@ const copyMedicationsTable =
     INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
       am,noon,evening,bed)
       SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
-      FROM tmpmedications;
+      FROM tmpmedications order by name, user_id;
     DROP TEMPORARY TABLE tmpmedications;`;
 
 const createMedicationsTbl =

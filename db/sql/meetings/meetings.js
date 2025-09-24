@@ -107,7 +107,7 @@ const deleteAllMeetings =
   ${copyMeetingsTable}`;
 
 const deleteMeetings =
-  `DELETE FROM meetings WHERE user_id=?;
+  `DELETE FROM meetings WHERE user_id=?
      ORDER BY id LIMIT 1;
      ${copyMeetingsTable}`;
 
@@ -132,11 +132,11 @@ const updateMeeting =
      @memo,@deposit);`;
 
 module.exports = {
-  copyMeetingsTable,
   createMeetingsTbl,
+  copyMeetingsTable,
   deleteAllMeetings,
   deleteMeetings,
   insertMeeting,
   selectMeetings,
-  updateMeeting
+  updateMeeting,
 }
