@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { bgtracker } = require('../../../db/db');
-const { updateNutrition } = require('../../../db/sql/bgtracker/nutritions');
+const connection = require('../../../db/Connection');
 
 router.post('/:user_id', (req, res) => {
   const {
@@ -99,8 +98,51 @@ router.post('/:user_id', (req, res) => {
     ironBed = req.body.ironBed,
     potassiumBed = req.body.potassiumBed,
   } = req.query;
-  bgtracker.query(
-    updateNutrition,
+
+  const sql = `SET @id=?;SET @user_id=?;SET @date=?;SET @foodNameB=?;
+  SET @caloriesB=?;SET@saturatedB=?;SET @transB=?;SET @polyunsaturatedB=?;
+  SET @monosaturatedB=?;SET @cholesterolB=?;SET @sodiumB=?;SET @carbsB=?;
+  SET @fiberB=?;SET @sugarsB=?;SET @proteinB=?;SET @vitaminAB=?;
+  SET @vitaminCB=?;SET @vitaminDB=?;SET @calciumB=?;SET @ironB=?;
+  SET @potassiumB=?;SET @foodNameL=?;SET @caloriesL=?;SET @saturatedL=?;
+  SET @transL=?;SET @polyunsaturatedL=?;SET @monosaturatedL=?;
+  SET @cholesterolL=?;SET @sodiumL=?;SET @carbsL=?;SET @fiberL=?;
+  SET @sugarsL=?;SET @proteinL=?;SET @vitaminAL=?;SET @vitaminCL=?;
+  SET @vitaminDL=?;SET @calciumL=?;SET @ironL=?;SET @potassiumL=?;
+  SET @foodNameD=?;SET @caloriesD=?;SET @saturatedD=?;SET @transD=?;
+  SET @polyunsaturatedD=?;SET @monosaturatedD=?;SET @cholesterolD=?;
+  SET @sodiumD=?;SET @carbsD=?;SET @fiberD=?;SET @sugarsD=?;SET @proteinD=?;
+  SET @vitaminAD=?;SET @vitaminCD=?;SET @vitaminDD=?;SET @calciumD=?;
+  SET @ironD=?;SET @potassiumD=?;SET @foodNameBB=?;SET @caloriesBB=?;
+  SET @saturatedBB=?;SET @transBB=?;SET @polyunsaturatedBB=?;
+  SET @monosaturatedBB=?;SET @cholesterolBB=?;SET @sodiumBB=?;SET @carbsBB=?;
+  SET @fiberBB=?;SET @sugarsBB=?;SET @proteinBB=?;SET @vitaminABB=?;
+  SET @vitaminCBB=?;SET @vitaminDBB=?;SET @calciumBB=?;SET @ironBB=?;
+  SET @potassiumBB=?;SET @foodNameBed=?;SET @caloriesBed=?;
+  SET @saturatedBed=?;SET @transBed=?;SET @polyunsaturatedBed=?;
+  SET @monosaturatedBed=?;SET @cholesterolBed=?;SET @sodiumBed=?;
+  SET @carbsBed=?;SET @fiberBed=?;SET @sugarsBed=?;SET @proteinBed=?;
+  SET @vitaminABed=?;SET @vitaminCBed=?;SET @vitaminDBed=?;SET@calciumBed=?;
+  SET @ironBed=?;SET @potassiumBed=?; CALL updateNutrition(@id,@user_id,
+    @date,@foodNameB,@caloriesB,@saturatedB,@transB,@polyunsaturatedB,
+    @monosaturatedB,@cholesterolB,@sodiumB,@carbsB,@fiberB,@sugarsB,
+    @proteinB,@vitaminAB,@vitaminCB,@vitaminDB,@calciumB,@ironB,@potassiumB,
+    @foodNameL,@caloriesL,@saturatedL,@transL,@polyunsaturatedL,
+    @monosaturatedL,@cholesterolL,@sodiumL,@carbsL,@fiberL,@sugarsL,@proteinL,
+    @vitaminAL,@vitaminCL,@vitaminDL,@calciumL,@ironL,@potassiumL,@foodNameD,
+    @caloriesD,@saturatedD,@transD,@polyunsaturatedD,@monosaturatedD,
+    @cholesterolD,@sodiumD,@carbsD,@fiberD,@sugarsD,@proteinD,@vitaminAD,
+    @vitaminCD,@vitaminDD,@calciumD,@ironD,@potassiumD,@foodNameBB,
+    @caloriesBB,@saturatedBB,@transBB,@polyunsaturatedBB,@monosaturatedBB,
+    @cholesterolBB,@sodiumBB,@carbsBB,@fiberBB,@sugarsBB,@proteinBB,
+    @vitaminABB,@vitaminCBB,@vitaminDBB,@calciumBB,@ironBB,@potassiumBB,
+    @foodNameBed,@caloriesBed,@saturatedBed,@transBed,@polyunsaturatedBed,
+    @monosaturatedBed,@cholesterolBed,@sodiumBed,@carbsBed,@fiberBed,
+    @sugarsBed,@proteinBed,@vitaminABed,@vitaminCBed,@vitaminDBed,
+    @calciumBed,@ironBed,@potassiumBed);`;
+
+  connection.query(
+    sql,
     [
       id,
       user_id,

@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { selectNutritions } = require('../../db/sql/bgtracker/nutritions');
-const { bgtracker } = require('../../db/db');
+const connection = require('../../db/Connection');
+
+const SELECT_ALL_NUTRITIONS_QUERY = 'SELECT * FROM nutritions';
 
 // Middleware
 router.use('/add', require('./nutritions/add'));
@@ -10,28 +11,27 @@ router.use('/delete', require('./nutritions/delete'));
 router.use('/deleteAll', require('./nutritions/deleteAll'));
 
 router.get('/', (req, res) => {
-  bgtracker.query(selectNutritions,
-    (err, nutritions) => {
-      if (err) {
-        return res.send(err);
-      } else {
-        return res.json({
-          nutritions,
-        });
-      }
-    });
+  connection.query(SELECT_ALL_NUTRITIONS_QUERY, (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        results,
+      });
+    }
+  });
 });
 
 router.get('/:user_id', (req, res) => {
-  bgtracker.query(
-    selectNutritions + ' WHERE user_id=?',
+  connection.query(
+    SELECT_ALL_NUTRITIONS_QUERY + ' WHERE user_id=?',
     [req.params.user_id],
-    (err, nutritions) => {
+    (err, results) => {
       if (err) {
         return res.send(err);
       } else {
         return res.json({
-          nutritions,
+          results,
         });
       }
     }

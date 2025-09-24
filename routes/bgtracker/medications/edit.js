@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { bgtracker } = require('../../../db/db');
-const { updateMedication } = require('../../../db/sql/bgtracker/medications');
+const connection = require('../../../db/Connection');
 
 router.post('/:user_id', (req, res) => {
   const {
@@ -17,8 +16,15 @@ router.post('/:user_id', (req, res) => {
     evening = req.body.evening,
     bed = req.body.bed,
   } = req.query;
-  bgtracker.query(
-    updateMedication,
+
+  const sql =
+    `SET @id=?;SET @user_id=?;SET @name=?;SET @dose=?;SET @unit=?;
+    SET @quantity=?;SET @prescriber=?;SET @am=?;SET @noon=?;
+    SET @evening=?;SET @bed=?; CALL updateMedication(@id,@user_id,
+    @name,@dose,@unit,@quantity,@prescriber,@am,@noon,@evening,@bed);`;
+
+  connection.query(
+    sql,
     [id, user_id, name, dose, unit, quantity, prescriber, am, noon, evening, bed],
     (err, results) => {
       if (err) {
