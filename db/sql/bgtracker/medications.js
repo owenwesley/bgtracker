@@ -16,7 +16,19 @@ const copyMedicationsTable =
         evening,bed 
         FROM medications order by name asc;
       DROP TABLE medications;
-      ${createMedicationsTbl}
+    CREATE TABLE medications(
+      id int not null auto_increment,
+      user_id int not null,
+      name text not null,
+      dose double not null,
+      unit text not null,
+      quantity int not null,
+      prescriber text not null,
+      am int not null,
+      noon int not null,
+      evening int not null,
+      bed int not null,
+      primary key (id));
     INSERT INTO medications(user_id,name,dose,unit,quantity,prescriber,
       am,noon,evening,bed)
       SELECT user_id,name,dose,unit,quantity,prescriber,am,noon,evening,bed 
