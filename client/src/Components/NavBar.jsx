@@ -2029,7 +2029,7 @@ export default class NavBar extends Component {
       0
     );
     total = Total + Total2 + Total3 + Total4 + Total5;
-    avg = total / (timesPD * 90);
+    avg = total / (timesPD * 120);
     a1c = avg * rate; //0.0461538461538;
 
     this.setState({
