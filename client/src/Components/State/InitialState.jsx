@@ -1,6 +1,6 @@
 import { A1CLabels } from "./A1CLabels";
 import { Bloodpressure } from "./Bloodpressure";
-import { Labels } from "./Labels";
+import { bpLabels, Labels120 } from "./Labels";
 import { Medication } from "./Medication";
 import { Nutrition } from "./Nutrition";
 import { Preference } from "./Preference";
@@ -9,7 +9,7 @@ import { User } from "./User";
 
 export const InitialState = {
   A1CLabels: A1CLabels,
-  labels: Labels,
+  labels: Labels120,
   a1cChartDataColaberated: {},
   a1cChartData: {},
   bgChartData: {},

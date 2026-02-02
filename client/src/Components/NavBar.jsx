@@ -15,7 +15,7 @@ import { StyledDiv } from "./Styles/StyledDiv.styled";
 import { StyledButton } from "./Styles/Button.styled";
 import { NavBarLink } from "./Styles/Link.styled";
 import { addBP, deleteBP, removeBloodPressure } from "./Utils/BloodPressures";
-import { Labels } from "./State/Labels";
+import { bpLabels, Labels120 } from "./State/Labels";
 import {
   BGChartData,
   BPChartData,
@@ -527,7 +527,7 @@ export default class NavBar extends Component {
     } = this.state.reading;
     const { editIdx, user, readings } = this.state;
 
-    if (readings.length >= 90) {
+    if (readings.length >= 120) {
       await deleteReading(user, readings, editIdx);
       removeReading(0, readings);
       this.setState({
@@ -2331,6 +2331,8 @@ export default class NavBar extends Component {
       Day60,
       totalTimes90,
       Day90,
+      totalTimes120,
+      Day120,
     } = colaberated(readings, timesPD, rate);
 
     return this.setState({
@@ -2387,18 +2389,28 @@ export default class NavBar extends Component {
             ),
             data: Day90,
           },
+          {
+            label: "120 Day",
+            backgroundColor: backgroundColor(
+              ((totalTimes120 / (timesPD * 120)) * rate).toFixed(2)
+            ),
+            borderColor: borderColor(
+              ((totalTimes120 / (timesPD * 120)) * rate).toFixed(2)
+            ),
+            data: Day120,
+          },
         ],
       },
     });
   };
 
   getA1CChartData = () => {
-    const { labels, readings, rate } = this.state;
+    const { readings, rate } = this.state;
     const { timesPD } = this.state.preference;
 
     return this.setState({
       a1cChartData: {
-        labels: labels,
+        labels: Labels120,
         datasets: [
           {
             label: "A1C",
@@ -2412,12 +2424,12 @@ export default class NavBar extends Component {
   };
 
   getBGChartData = () => {
-    const { labels, readings } = this.state;
+    const { readings } = this.state;
     const { dataSB, dataSL, dataSD, dataSBB, dataSBed } = BGChartData(readings);
 
     return this.setState({
       bgChartData: {
-        labels: labels,
+        labels: Labels120,
         datasets: [
           {
             label: "Breakfast",
@@ -2536,7 +2548,7 @@ export default class NavBar extends Component {
 
     this.setState({
       bpChartData: {
-        labels: Labels,
+        labels: bpLabels,
         datasets: [
           {
             label: "First SYS (Top BP)",

@@ -37,7 +37,7 @@ const Row = (
               name={y.prop}
               type={y.type}
               value={x[y.prop]}
-              checked={x[y.prop]}
+              checked={Boolean(x[y.prop])}
               disabled={false}
               onChange={(e) => handleChange(e, y.prop, i)}
             />
@@ -47,7 +47,7 @@ const Row = (
               name={y.prop}
               type={y.type}
               value={x[y.prop]}
-              checked={x[y.prop]}
+              checked={Boolean(x[y.prop])}
               disabled={true}
             />
           ) : (

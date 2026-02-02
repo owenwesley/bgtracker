@@ -30,7 +30,7 @@ export default class Preferences extends Component {
     return (
       <div style={{ backgroundColor: 'white' }}>
         {(this.props.timesPD === 1 && this.props.chkBP) ||
-        (this.props.timesPD === 2 && this.props.chkBP) ? (
+          (this.props.timesPD === 2 && this.props.chkBP) ? (
           <h3 style={{ color: 'black' }}>Blood Pressure Tracking</h3>
         ) : (this.props.timesPD === 1 && !this.props.chkBP) ||
           (this.props.timesPD === 2 && !this.props.chkBP) ? (
@@ -56,7 +56,7 @@ export default class Preferences extends Component {
           <div>
             <CheckBox
               name='chkBP'
-              checked={this.props.chkBP}
+              checked={Boolean(this.props.chkBP)}
               disabled={false}
               onChange={this.props.handlePreference}
             />
@@ -68,7 +68,7 @@ export default class Preferences extends Component {
           <div>
             <CheckBox
               name='chkBP'
-              checked={this.props.chkBP}
+              checked={Boolean(this.props.chkBP)}
               disabled={false}
               onChange={this.props.handlePreference}
             />
@@ -81,7 +81,7 @@ export default class Preferences extends Component {
             <div>
               <CheckBox
                 name='chkNutrition'
-                checked={this.props.chkNutrition}
+                checked={Boolean(this.props.chkNutrition)}
                 disabled={false}
                 onChange={this.props.handlePreference}
               />
@@ -93,7 +93,7 @@ export default class Preferences extends Component {
               <div>
                 <CheckBox
                   name='chkMeds'
-                  checked={this.props.chkMeds}
+                  checked={Boolean(this.props.chkMeds)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -108,7 +108,7 @@ export default class Preferences extends Component {
               <div>
                 <CheckBox
                   name='chkMedsB'
-                  checked={this.props.chkMedsB}
+                  checked={Boolean(this.props.chkMedsB)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -117,7 +117,7 @@ export default class Preferences extends Component {
                 </label>
                 <CheckBox
                   name='chkMedsL'
-                  checked={this.props.chkMedsL}
+                  checked={Boolean(this.props.chkMedsL)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -126,7 +126,7 @@ export default class Preferences extends Component {
                 </label>
                 <CheckBox
                   name='chkMedsD'
-                  checked={this.props.chkMedsD}
+                  checked={Boolean(this.props.chkMedsD)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -135,7 +135,7 @@ export default class Preferences extends Component {
                 </label>
                 <CheckBox
                   name='chkMedsBed'
-                  checked={this.props.chkMedsBed}
+                  checked={Boolean(this.props.chkMedsBed)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -150,7 +150,7 @@ export default class Preferences extends Component {
               <div>
                 <CheckBox
                   name='chkInsulin'
-                  checked={this.props.chkInsulin}
+                  checked={Boolean(this.props.chkInsulin)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -186,7 +186,7 @@ export default class Preferences extends Component {
               <div>
                 <CheckBox
                   name='chkBP'
-                  checked={this.props.chkBP}
+                  checked={Boolean(this.props.chkBP)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />
@@ -201,7 +201,7 @@ export default class Preferences extends Component {
               <div>
                 <CheckBox
                   name='chkSlidingScale'
-                  checked={this.props.chkSlidingScale}
+                  checked={Boolean(this.props.chkSlidingScale)}
                   disabled={false}
                   onChange={this.props.handlePreference}
                 />

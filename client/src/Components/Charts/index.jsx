@@ -37,17 +37,25 @@ export const A1CChart = ({ chartDataColaberated, chartData }) => {
           <StyledButton to={"/a1cchart/colaberated"}>Colaberated</StyledButton>
         </NavBarLink>
         <NavBarLink>
-          <StyledButton to={"/a1cchart/90days"}>90 Days</StyledButton>
+          <StyledButton to={"/a1cchart/120days"}>120 Days</StyledButton>
         </NavBarLink>
       </ul>
       <Route exact path="/a1cchart/colaberated">
         <StyledA1C>
-          <Bar data={chartDataColaberated} options={a1cOptions} />
+          {chartDataColaberated && chartDataColaberated.labels && chartDataColaberated.datasets ? (
+            <Bar data={chartDataColaberated} options={a1cOptions} />
+          ) : (
+            <div>No data</div>
+          )}
         </StyledA1C>
       </Route>
-      <Route path="/a1cchart/90days">
+      <Route path="/a1cchart/120days">
         <StyledA1C>
-          <Bar data={chartData} options={a1cOptions} />
+          {chartData && chartData.labels && chartData.datasets ? (
+            <Bar data={chartData} options={a1cOptions} />
+          ) : (
+            <div>No data</div>
+          )}
         </StyledA1C>
       </Route>
     </Router>

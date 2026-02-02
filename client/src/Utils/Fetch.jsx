@@ -6,7 +6,17 @@ export async function getFetch(url, params = {}) {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     })
-    return await res.json()
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+        try {
+            return await res.json();
+        } catch (err) {
+            return { error: 'Invalid JSON', ok: res.ok, status: res.status };
+        }
+    } else {
+        const text = await res.text();
+        return { error: text, ok: res.ok, status: res.status };
+    }
 }
 
 export async function postFetch(url, params = {}) {
@@ -17,7 +27,17 @@ export async function postFetch(url, params = {}) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     })
-    return await res.json()
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+        try {
+            return await res.json();
+        } catch (err) {
+            return { error: 'Invalid JSON', ok: res.ok, status: res.status };
+        }
+    } else {
+        const text = await res.text();
+        return { error: text, ok: res.ok, status: res.status };
+    }
 }
 
 export async function putFetch(url, params = {}) {
@@ -28,7 +48,17 @@ export async function putFetch(url, params = {}) {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' }
     })
-    return await res.json()
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+        try {
+            return await res.json();
+        } catch (err) {
+            return { error: 'Invalid JSON', ok: res.ok, status: res.status };
+        }
+    } else {
+        const text = await res.text();
+        return { error: text, ok: res.ok, status: res.status };
+    }
 }
 
 export async function patchFetch(url, params = {}) {
@@ -39,5 +69,15 @@ export async function patchFetch(url, params = {}) {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' }
     })
-    return await res.json()
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+        try {
+            return await res.json();
+        } catch (err) {
+            return { error: 'Invalid JSON', ok: res.ok, status: res.status };
+        }
+    } else {
+        const text = await res.text();
+        return { error: text, ok: res.ok, status: res.status };
+    }
 }

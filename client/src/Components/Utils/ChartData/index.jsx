@@ -2,14 +2,14 @@ export const backgroundColor = (A1C) => {
   return A1C >= Number(1.0) && A1C <= Number(5.6)
     ? "rgba(0,0,255,0.6)"
     : A1C >= Number(5.6) && A1C <= Number(6.5)
-    ? "rgba(255,255,0,0.6)"
-    : A1C >= Number(6.5) && A1C <= Number(7.5)
-    ? "rgba(0,255,0,0.6)"
-    : A1C >= Number(7.5) && A1C <= Number(8.5)
-    ? "rgba(255,165,0,0.6)"
-    : A1C >= Number(8.5)
-    ? "rgba(255,0,0,0.6)"
-    : "rgba(0,0,0,0.6)";
+      ? "rgba(255,255,0,0.6)"
+      : A1C >= Number(6.5) && A1C <= Number(7.5)
+        ? "rgba(0,255,0,0.6)"
+        : A1C >= Number(7.5) && A1C <= Number(8.5)
+          ? "rgba(255,165,0,0.6)"
+          : A1C >= Number(8.5)
+            ? "rgba(255,0,0,0.6)"
+            : "rgba(0,0,0,0.6)";
 };
 
 export const BGChartData = (readings) => {
@@ -57,14 +57,14 @@ export const borderColor = (A1C) => {
   return A1C >= Number(1.0) && A1C <= Number(5.6)
     ? "rgba(0,0,255,1)"
     : A1C >= Number(5.6) && A1C <= Number(6.5)
-    ? "rgba(255,255,0,1)"
-    : A1C >= Number(6.5) && A1C <= Number(7.5)
-    ? "rgba(0,255,0,1)"
-    : A1C >= Number(7.5) && A1C <= Number(8.5)
-    ? "rgba(255,165,0,1)"
-    : A1C >= Number(8.5)
-    ? "rgba(255,0,0,1)"
-    : "rgba(0,0,0,1)";
+      ? "rgba(255,255,0,1)"
+      : A1C >= Number(6.5) && A1C <= Number(7.5)
+        ? "rgba(0,255,0,1)"
+        : A1C >= Number(7.5) && A1C <= Number(8.5)
+          ? "rgba(255,165,0,1)"
+          : A1C >= Number(8.5)
+            ? "rgba(255,0,0,1)"
+            : "rgba(0,0,0,1)";
 };
 
 export const colaberated = (readings, timesPD, rate) => {
@@ -79,45 +79,69 @@ export const colaberated = (readings, timesPD, rate) => {
     totalTimes60 = 0,
     totalTimes90 = 0;
 
-  for (A = readings.length - 1; A < readings.length; A++) {
+  if (readings && readings.length > 0) {
+    const lastIdx = readings.length - 1;
     totalTimes +=
-      readings[A].sugarB +
-      readings[A].sugarL +
-      readings[A].sugarD +
-      readings[A].sugarBB +
-      readings[A].sugarBed;
-  }
-  for (B = readings.length - 7; B < readings.length; B++) {
-    totalTimes7 +=
-      readings[B].sugarB +
-      readings[B].sugarL +
-      readings[B].sugarD +
-      readings[B].sugarBB +
-      readings[B].sugarBed;
-  }
-  for (C = readings.length - 30; C < readings.length; C++) {
-    totalTimes30 +=
-      readings[C].sugarB +
-      readings[C].sugarL +
-      readings[C].sugarD +
-      readings[C].sugarBed +
-      readings[C].sugarBed;
-  }
-  for (D = readings.length - 60; D < readings.length; D++) {
-    totalTimes60 +=
-      readings[D].sugarB +
-      readings[D].sugarL +
-      readings[D].sugarD +
-      readings[D].sugarBB +
-      readings[D].sugarBed;
-  }
-  for (E = readings.length - 90; E < readings.length; E++) {
-    totalTimes90 +=
-      readings[E].sugarB +
-      readings[E].sugarL +
-      readings[E].sugarD +
-      readings[E].sugarBB +
-      readings[E].sugarBed;
+      (readings[lastIdx].sugarB || 0) +
+      (readings[lastIdx].sugarL || 0) +
+      (readings[lastIdx].sugarD || 0) +
+      (readings[lastIdx].sugarBB || 0) +
+      (readings[lastIdx].sugarBed || 0);
+
+    const start7 = Math.max(0, readings.length - 7);
+    for (let i = start7; i < readings.length; i++) {
+      totalTimes7 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    const start30 = Math.max(0, readings.length - 30);
+    for (let i = start30; i < readings.length; i++) {
+      totalTimes30 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    const start60 = Math.max(0, readings.length - 60);
+    for (let i = start60; i < readings.length; i++) {
+      totalTimes60 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    const start90 = Math.max(0, readings.length - 90);
+    for (let i = start90; i < readings.length; i++) {
+      totalTimes90 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    const start120 = Math.max(0, readings.length - 120);
+    let totalTimes120 = 0;
+    for (let i = start120; i < readings.length; i++) {
+      totalTimes120 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    var _totalTimes120 = totalTimes120;
+  } else {
+    var _totalTimes120 = 0;
   }
   const Day1 = readings.map((data) => {
     return ((totalTimes / (timesPD * 1)) * rate).toFixed(2);
@@ -134,6 +158,9 @@ export const colaberated = (readings, timesPD, rate) => {
   const Day90 = readings.map((data) => {
     return ((totalTimes90 / (timesPD * 90)) * rate).toFixed(2);
   });
+  const Day120 = readings.map((data) => {
+    return (((_totalTimes120 || 0) / (timesPD * 120)) * rate).toFixed(2);
+  });
   return {
     totalTimes,
     Day1,
@@ -145,6 +172,8 @@ export const colaberated = (readings, timesPD, rate) => {
     Day60,
     totalTimes90,
     Day90,
+    totalTimes120: _totalTimes120,
+    Day120,
   };
 };
 
@@ -152,16 +181,16 @@ export const dataTimes = (readings, rate, timesPD) => {
   return readings.map((data) => {
     return readings.reduce(
       (Totaldata, readings) =>
-        (Totaldata = parseFloat(
-          (rate *
-            (data.sugarB +
-              data.sugarL +
-              data.sugarD +
-              data.sugarBB +
-              data.sugarBed)) /
-            timesPD,
-          10
-        ).toFixed(2)),
+      (Totaldata = parseFloat(
+        (rate *
+          (data.sugarB +
+            data.sugarL +
+            data.sugarD +
+            data.sugarBB +
+            data.sugarBed)) /
+        timesPD,
+        10
+      ).toFixed(2)),
       0
     );
   });
@@ -178,20 +207,20 @@ export const colordataTimes = (readings, rate, timesPD) => {
               data.sugarD +
               data.sugarBB +
               data.sugarBed)) /
-            timesPD,
+          timesPD,
           10
         )),
         Totaldata <= Number(5.6)
           ? "rgba(0,0,255,0.6)"
           : Totaldata >= Number(5.6) && Totaldata <= Number(6.5)
-          ? "rgba(255,255,0,0.6)"
-          : Totaldata >= Number(6.5) && Totaldata <= Number(7.5)
-          ? "rgba(0,255,0,0.6)"
-          : Totaldata >= Number(7.5) && Totaldata <= Number(8.5)
-          ? "rgba(255,165,0,0.6)"
-          : Totaldata >= Number(8.5)
-          ? "rgba(255,0,0,0.6)"
-          : "rgba(0,0,0,0.6)"
+            ? "rgba(255,255,0,0.6)"
+            : Totaldata >= Number(6.5) && Totaldata <= Number(7.5)
+              ? "rgba(0,255,0,0.6)"
+              : Totaldata >= Number(7.5) && Totaldata <= Number(8.5)
+                ? "rgba(255,165,0,0.6)"
+                : Totaldata >= Number(8.5)
+                  ? "rgba(255,0,0,0.6)"
+                  : "rgba(0,0,0,0.6)"
       ),
       0
     );
@@ -209,20 +238,20 @@ export const borderdataTimes = (readings, rate, timesPD) => {
               data.sugarD +
               data.sugarBB +
               data.sugarBed)) /
-            timesPD,
+          timesPD,
           10
         )),
         Totaldata <= Number(5.6)
           ? "rgba(0,0,255,1)"
           : Totaldata >= Number(5.6) && Totaldata <= Number(6.5)
-          ? "rgba(255,255,0,1)"
-          : Totaldata >= Number(6.5) && Totaldata <= Number(7.5)
-          ? "rgba(0,255,0,1)"
-          : Totaldata >= Number(7.5) && Totaldata <= Number(8.5)
-          ? "rgba(255,165,0,1)"
-          : Totaldata >= Number(8.5)
-          ? "rgba(255,0,0,1)"
-          : "rgba(0,0,0,1)"
+            ? "rgba(255,255,0,1)"
+            : Totaldata >= Number(6.5) && Totaldata <= Number(7.5)
+              ? "rgba(0,255,0,1)"
+              : Totaldata >= Number(7.5) && Totaldata <= Number(8.5)
+                ? "rgba(255,165,0,1)"
+                : Totaldata >= Number(8.5)
+                  ? "rgba(255,0,0,1)"
+                  : "rgba(0,0,0,1)"
       ),
       0
     );
