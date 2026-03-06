@@ -224,16 +224,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -367,16 +367,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -510,16 +510,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -648,16 +648,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -786,16 +786,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -924,16 +924,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1057,16 +1057,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1190,16 +1190,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1323,16 +1323,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1451,16 +1451,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1579,16 +1579,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1707,16 +1707,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1840,16 +1840,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -1973,16 +1973,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -2213,11 +2213,11 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -2432,16 +2432,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -2565,16 +2565,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -2698,16 +2698,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -2831,16 +2831,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -2959,16 +2959,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3087,16 +3087,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3215,16 +3215,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3338,16 +3338,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3461,16 +3461,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3584,16 +3584,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3702,16 +3702,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3820,16 +3820,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -3938,16 +3938,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4056,16 +4056,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4179,16 +4179,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4489,10 +4489,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 5 &&
-      chkNutrition === true &&
-      chkInsulin === false &&
-      typInsulin === 0 &&
-      chkBP === false) ||
+    chkNutrition === true &&
+    chkInsulin === false &&
+    typInsulin === 0 &&
+    chkBP === false) ||
     (timesPD === 5 &&
       chkNutrition === 1 &&
       chkInsulin === 0 &&
@@ -4565,16 +4565,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4693,16 +4693,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4821,16 +4821,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -4949,16 +4949,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5072,16 +5072,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5195,16 +5195,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5318,16 +5318,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5436,16 +5436,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5554,16 +5554,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5672,16 +5672,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5785,16 +5785,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -5898,16 +5898,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6011,16 +6011,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6129,16 +6129,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6247,16 +6247,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6457,11 +6457,11 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -6646,16 +6646,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6764,16 +6764,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -6882,16 +6882,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7000,16 +7000,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7113,16 +7113,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7226,16 +7226,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7339,16 +7339,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7447,16 +7447,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7555,16 +7555,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7663,16 +7663,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7766,16 +7766,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7869,16 +7869,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -7972,16 +7972,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8080,16 +8080,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8188,16 +8188,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8378,10 +8378,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -8465,10 +8465,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -8551,10 +8551,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 4 &&
-      chkNutrition === true &&
-      chkInsulin === false &&
-      typInsulin === 0 &&
-      chkBP === false) ||
+    chkNutrition === true &&
+    chkInsulin === false &&
+    typInsulin === 0 &&
+    chkBP === false) ||
     (timesPD === 4 &&
       chkNutrition === 1 &&
       chkInsulin === 0 &&
@@ -8617,16 +8617,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8720,16 +8720,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8823,16 +8823,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -8926,16 +8926,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9029,16 +9029,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9132,16 +9132,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9235,16 +9235,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9338,16 +9338,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9441,16 +9441,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9544,16 +9544,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9642,16 +9642,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9740,16 +9740,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9838,16 +9838,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -9931,16 +9931,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10024,16 +10024,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10117,16 +10117,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10215,16 +10215,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10313,16 +10313,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10411,11 +10411,11 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -10489,11 +10489,11 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 2 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 2 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -10638,16 +10638,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10736,16 +10736,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10834,16 +10834,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === true &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === true &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -10932,16 +10932,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11025,16 +11025,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11118,16 +11118,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === true &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === true &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11211,16 +11211,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11299,16 +11299,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11387,16 +11387,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11475,16 +11475,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === false &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === false &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11568,16 +11568,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === false) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11615,7 +11615,7 @@ const Tables = ({
         },
         {
           name: "Insulin",
-          prop: "insulinB",
+          prop: "insulinSB",
           type: "number",
         },
         {
@@ -11661,16 +11661,16 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === true &&
-      chkMedsB === true &&
-      chkMedsL === false &&
-      chkMedsD === false &&
-      chkMedsBed === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === true &&
+    chkMedsB === true &&
+    chkMedsL === false &&
+    chkMedsD === false &&
+    chkMedsBed === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkMeds === 1 &&
@@ -11708,7 +11708,7 @@ const Tables = ({
         },
         {
           name: "Insulin",
-          prop: "insulinB",
+          prop: "insulinSB",
           type: "number",
         },
         {
@@ -11754,12 +11754,12 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkMeds === false &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true &&
-      chkSlidingScale === true) ||
+    chkNutrition === true &&
+    chkMeds === false &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true &&
+    chkSlidingScale === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -11828,10 +11828,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkInsulin === true &&
-      typInsulin === 1 &&
-      chkBP === true) ||
+    chkNutrition === true &&
+    chkInsulin === true &&
+    typInsulin === 1 &&
+    chkBP === true) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkInsulin === 1 &&
@@ -11965,10 +11965,10 @@ const Tables = ({
       ]}
     />
   ) : (timesPD === 3 &&
-      chkNutrition === true &&
-      chkInsulin === false &&
-      typInsulin === 0 &&
-      chkBP === false) ||
+    chkNutrition === true &&
+    chkInsulin === false &&
+    typInsulin === 0 &&
+    chkBP === false) ||
     (timesPD === 3 &&
       chkNutrition === 1 &&
       chkInsulin === 0 &&

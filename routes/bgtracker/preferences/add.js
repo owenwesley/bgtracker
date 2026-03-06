@@ -7,6 +7,7 @@ router.post('/:user_id', (req, res) => {
     user_id = req.body.user_id,
     timesPD = req.body.timesPD,
     chkNutrition = req.body.chkNutrition,
+    chkWeight = req.body.chkWeight,
     chkMeds = req.body.chkMeds,
     chkMedsB = req.body.chkMedsB,
     chkMedsL = req.body.chkMedsL,
@@ -27,12 +28,13 @@ router.post('/:user_id', (req, res) => {
     carbRatio = req.body.carbRatio,
   } = req.query;
   const INSERT_PREFERENCES_QUERY =
-    'INSERT INTO preferences (' +
-    'user_id,timesPD,chkNutrition,chkMeds,chkMedsB,chkMedsL,chkMedsD,' +
-    'chkMedsBed,chkInsulin,typInsulin,chkSlidingScale,slidingScale1,' +
-    'slidingScale2a,slidingScale2b,slidingScale3a,slidingScale3b,' +
-    'slidingScale4a,slidingScale4b, slidingScale5,carbRatio)' +
-    ` values(${user_id},${timesPD},${chkNutrition},${chkMeds},${chkMedsB},
+    `INSERT INTO preferences (
+      user_id,timesPD,chkNutrition,chkWeight,chkMeds,chkMedsB,
+      chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,chkBP,
+      chkSlidingScale,slidingScale1,slidingScale2a,slidingScale2b,
+      slidingScale3a,slidingScale3b,slidingScale4a,slidingScale4b,
+      slidingScale5,carbRatio) values(${user_id},${timesPD},
+    ${chkNutrition},${chkWeight},${chkMeds},${chkMedsB},
       ${chkMedsL},${chkMedsD},${chkMedsBed},${chkInsulin},${typInsulin},
       ${chkBP},${chkSlidingScale},${slidingScale1},${slidingScale2a},
       ${slidingScale2b},${slidingScale3a},${slidingScale3b},${slidingScale4a},

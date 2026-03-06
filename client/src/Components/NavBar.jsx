@@ -5,7 +5,7 @@ import { A1CChart, BGChart, BPChart } from "./Charts";
 import Preferences from "./Preferences";
 import { InitialState } from "./State/InitialState";
 import { addMeds, deductMeds, editMeds } from "./Utils/Medications";
-import { deleteNutrition, removeNutrition } from "./Utils/Nutrition";
+import { addNutrition, deleteNutrition, editNutrition, removeNutrition } from "./Utils/Nutrition";
 import { deleteReading, editReading, removeReading } from "./Utils/Readings";
 import { postFetch } from "../Utils/Fetch";
 import TableMeds from "./Tables/TableMeds";
@@ -14,7 +14,7 @@ import TableOneBP from "./Tables/TableOneBP";
 import { StyledDiv } from "./Styles/StyledDiv.styled";
 import { StyledButton } from "./Styles/Button.styled";
 import { NavBarLink } from "./Styles/Link.styled";
-import { addBP, deleteBP, removeBloodPressure } from "./Utils/BloodPressures";
+import { addBP, deleteBP, editBP, removeBloodPressure } from "./Utils/BloodPressures";
 import { bpLabels, Labels120 } from "./State/Labels";
 import {
   BGChartData,
@@ -26,6 +26,9 @@ import {
   colordataTimes,
   dataTimes,
 } from "./Utils/ChartData";
+import TableOne from "./Tables/TableOne";
+import TableWeights from "./Tables/TableWeights";
+import { deleteWeight, editWeight, removeWeight } from "./Utils/Weights";
 // import TableNutrition from './Tables/TableNutrition';
 // import TableNutritionTwo from './Tables/TableNutritionTwo';
 // import TableNutritionThree from './Tables/TableNutritionThree';
@@ -402,101 +405,25 @@ export default class NavBar extends Component {
         ],
       });
     }
-    await postFetch(`/bgtracker/nutritions/add/${user.id}`, {
-      user_id: user.id,
-      date: date,
-      foodNameB: foodNameB,
-      caloriesB: caloriesB,
-      saturatedB: saturatedB,
-      transB: transB,
-      polyunsaturatedB: polyunsaturatedB,
-      monosaturatedB: monosaturatedB,
-      cholesterolB: cholesterolB,
-      sodiumB: sodiumB,
-      carbsB: carbsB,
-      fiberB: fiberB,
-      sugarsB: sugarsB,
-      proteinB: proteinB,
-      vitaminAB: vitaminAB,
-      vitaminCB: vitaminCB,
-      vitaminDB: vitaminDB,
-      calciumB: calciumB,
-      ironB: ironB,
-      potassiumB: potassiumB,
-      foodNameL: foodNameL,
-      caloriesL: caloriesL,
-      saturatedL: saturatedL,
-      transL: transL,
-      polyunsaturatedL: polyunsaturatedL,
-      monosaturatedL: monosaturatedL,
-      cholesterolL: cholesterolL,
-      sodiumL: sodiumL,
-      carbsL: carbsL,
-      fiberL: fiberL,
-      sugarsL: sugarsL,
-      proteinL: proteinL,
-      vitaminAL: vitaminAL,
-      vitaminCL: vitaminCL,
-      vitaminDL: vitaminDL,
-      calciumL: calciumL,
-      ironL: ironL,
-      potassiumL: potassiumL,
-      foodNameD: foodNameD,
-      caloriesD: caloriesD,
-      saturatedD: saturatedD,
-      transD: transD,
-      polyunsaturatedD: polyunsaturatedD,
-      monosaturatedD: monosaturatedD,
-      cholesterolD: cholesterolD,
-      sodiumD: sodiumD,
-      carbsD: carbsD,
-      fiberD: fiberD,
-      sugarsD: sugarsD,
-      proteinD: proteinD,
-      vitaminAD: vitaminAD,
-      vitaminCD: vitaminCD,
-      vitaminDD: vitaminDD,
-      calciumD: calciumD,
-      ironD: ironD,
-      potassiumD: potassiumD,
-      foodNameBB: foodNameBB,
-      caloriesBB: caloriesBB,
-      saturatedBB: saturatedBB,
-      transBB: transBB,
-      polyunsaturatedBB: polyunsaturatedBB,
-      monosaturatedBB: monosaturatedBB,
-      cholesterolBB: cholesterolBB,
-      sodiumBB: sodiumBB,
-      carbsBB: carbsBB,
-      fiberBB: fiberBB,
-      sugarsBB: sugarsBB,
-      proteinBB: proteinBB,
-      vitaminABB: vitaminABB,
-      vitaminCBB: vitaminCBB,
-      vitaminDBB: vitaminDBB,
-      calciumBB: calciumBB,
-      ironBB: ironBB,
-      potassiumBB: potassiumBB,
-      foodNameBed: foodNameBed,
-      caloriesBed: caloriesBed,
-      saturatedBed: saturatedBed,
-      transBed: transBed,
-      polyunsaturatedBed: polyunsaturatedBed,
-      monosaturatedBed: monosaturatedBed,
-      cholesterolBed: cholesterolBed,
-      sodiumBed: sodiumBed,
-      carbsBed: carbsBed,
-      fiberBed: fiberBed,
-      sugarsBed: sugarsBed,
-      proteinBed: proteinBed,
-      vitaminABed: vitaminABed,
-      vitaminCBed: vitaminCBed,
-      vitaminDBed: vitaminDBed,
-      calciumBed: calciumBed,
-      ironBed: ironBed,
-      potassiumBed: potassiumBed,
-    }).catch((err) => console.log(err));
-  };
+    await addNutrition(user, date, foodNameB, caloriesB, saturatedB,
+      transB, polyunsaturatedB, monosaturatedB, cholesterolB, sodiumB,
+      carbsB, fiberB, sugarsB, proteinB, vitaminAB, vitaminCB,
+      vitaminDB, calciumB, ironB, potassiumB, foodNameL, caloriesL,
+      saturatedL, transL, polyunsaturatedL, monosaturatedL,
+      cholesterolL, sodiumL, carbsL, fiberL, sugarsL, proteinL,
+      vitaminAL, vitaminCL, vitaminDL, calciumL, ironL, potassiumL,
+      foodNameD, caloriesD, saturatedD, transD, polyunsaturatedD,
+      monosaturatedD, cholesterolD, sodiumD, carbsD, fiberD, sugarsD,
+      proteinD, vitaminAD, vitaminCD, vitaminDD, calciumD, ironD,
+      potassiumD, foodNameBB, caloriesBB, saturatedBB, transBB,
+      polyunsaturatedBB, monosaturatedBB, cholesterolBB, sodiumBB,
+      carbsBB, fiberBB, sugarsBB, proteinBB, vitaminABB, vitaminCBB,
+      vitaminDBB, calciumBB, ironBB, potassiumBB, foodNameBed,
+      caloriesBed, saturatedBed, transBed, polyunsaturatedBed,
+      monosaturatedBed, cholesterolBed, sodiumBed, carbsBed, fiberBed,
+      sugarsBed, proteinBed, vitaminABed, vitaminCBed, vitaminDBed,
+      calciumBed, ironBed, potassiumBed);
+  }
 
   addReading = async () => {
     const {
@@ -629,6 +556,53 @@ export default class NavBar extends Component {
     this.findAvg();
   };
 
+  addWeight = async () => {
+    const {
+      date,
+      kg,
+      lbs,
+      bmi,
+    } = this.state.weight;
+    const { editIdx, user, weights } = this.state;
+
+    if (weights.length >= 120) {
+      await deleteWeight(user, weights, editIdx);
+      removeWeight(0, weights);
+      this.setState({
+        weights: [
+          ...weights,
+          {
+            user_id: user.id,
+            date: date,
+            kg: kg,
+            lbs: lbs,
+            bmi: bmi,
+          },
+        ],
+      });
+    } else {
+      this.setState({
+        weights: [
+          ...weights,
+          {
+            user_id: user.id,
+            date: date,
+            kg: kg,
+            lbs: lbs,
+            bmi: bmi,
+          },
+        ],
+      });
+    }
+    await postFetch(`/bgtracker/weights/add/${user.id}`, {
+      user_id: user.id,
+      date: date,
+      kg: kg,
+      lbs: lbs,
+      bmi: bmi,
+    }).catch((err) => console.log(err));
+  };
+
   startEditingBloodPressure = (i) => {
     const { users } = this.state;
     const { userName } = this.state.user;
@@ -661,40 +635,26 @@ export default class NavBar extends Component {
     this.setState({ editIdx: i });
   };
 
+  startEditingWeight = (i) => {
+    const { users } = this.state;
+    const { userName } = this.state.user;
+
+    this.getWeights(users.find((user) => user.userName === userName).id);
+    this.setState({ editIdx: i });
+  };
+
   stopEditingMedication = async () => {
     const { editIdx, user, medications } = this.state;
 
     this.setState({ editIdx: -1 });
-    await postFetch(`/bgtracker/medications/edit/${user.id}`, {
-      id: medications[editIdx].id,
-      user_id: user.id,
-      name: medications[editIdx].name,
-      dose: medications[editIdx].dose,
-      unit: medications[editIdx].unit,
-      quantity: medications[editIdx].quantity,
-      prescriber: medications[editIdx].prescriber,
-      am: medications[editIdx].am,
-      noon: medications[editIdx].noon,
-      evening: medications[editIdx].evening,
-      bed: medications[editIdx].bed,
-    }).catch((err) => console.log(err));
+    await editMeds(user, medications, editIdx);
   };
 
   stopEditingBloodPressure = async () => {
     const { editIdx, user, bloodpressures } = this.state;
 
     this.setState({ editIdx: -1 });
-    await postFetch(`/bgtracker/bloodpressures/edit/${user.id}`, {
-      id: bloodpressures[editIdx].id,
-      user_id: user.id,
-      date: bloodpressures[editIdx].date,
-      hbp: bloodpressures[editIdx].hbp,
-      lbp: bloodpressures[editIdx].lbp,
-      hr: bloodpressures[editIdx].hr,
-      hbp2: bloodpressures[editIdx].hbp2,
-      lbp2: bloodpressures[editIdx].lbp2,
-      hr2: bloodpressures[editIdx].hr2,
-    }).catch((err) => console.log(err));
+    await editBP(user, bloodpressures, editIdx);
     this.findAvgBp();
   };
 
@@ -702,101 +662,7 @@ export default class NavBar extends Component {
     const { editIdx, user, nutritions } = this.state;
 
     this.setState({ editIdx: -1 });
-    await postFetch(`/bgtracker/nutritions/edit/${user.id}`, {
-      id: nutritions[editIdx].id,
-      user_id: user.id,
-      date: nutritions[editIdx].date,
-      foodNameB: nutritions[editIdx].foodNameB,
-      caloriesB: nutritions[editIdx].caloriesB,
-      saturatedB: nutritions[editIdx].saturatedB,
-      transB: nutritions[editIdx].transB,
-      polyunsaturatedB: nutritions[editIdx].polyunsaturatedB,
-      monosaturatedB: nutritions[editIdx].monosaturatedB,
-      cholesterolB: nutritions[editIdx].cholesterolB,
-      sodiumB: nutritions[editIdx].sodiumB,
-      carbsB: nutritions[editIdx].carbsB,
-      fiberB: nutritions[editIdx].fiberB,
-      sugarsB: nutritions[editIdx].sugarsB,
-      proteinB: nutritions[editIdx].proteinB,
-      vitaminAB: nutritions[editIdx].vitaminAB,
-      vitaminCB: nutritions[editIdx].vitaminCB,
-      vitaminDB: nutritions[editIdx].vitaminDB,
-      calciumB: nutritions[editIdx].calciumB,
-      ironB: nutritions[editIdx].ironB,
-      potassiumB: nutritions[editIdx].potassiumB,
-      foodNameL: nutritions[editIdx].foodNameL,
-      caloriesL: nutritions[editIdx].caloriesL,
-      saturatedL: nutritions[editIdx].saturatedL,
-      transL: nutritions[editIdx].transL,
-      polyunsaturatedL: nutritions[editIdx].polyunsaturatedL,
-      monosaturatedL: nutritions[editIdx].monosaturatedL,
-      cholesterolL: nutritions[editIdx].cholesterolL,
-      sodiumL: nutritions[editIdx].sodiumL,
-      carbsL: nutritions[editIdx].carbsL,
-      fiberL: nutritions[editIdx].fiberL,
-      sugarsL: nutritions[editIdx].sugarsL,
-      proteinL: nutritions[editIdx].proteinL,
-      vitaminAL: nutritions[editIdx].vitaminAL,
-      vitaminCL: nutritions[editIdx].vitaminCL,
-      vitaminDL: nutritions[editIdx].vitaminDL,
-      calciumL: nutritions[editIdx].calciumL,
-      ironL: nutritions[editIdx].ironL,
-      potassiumL: nutritions[editIdx].potassiumL,
-      foodNameD: nutritions[editIdx].foodNameD,
-      caloriesD: nutritions[editIdx].caloriesD,
-      saturatedD: nutritions[editIdx].saturatedD,
-      transD: nutritions[editIdx].transD,
-      polyunsaturatedD: nutritions[editIdx].polyunsaturatedD,
-      monosaturatedD: nutritions[editIdx].monosaturatedD,
-      cholesterolD: nutritions[editIdx].cholesterolD,
-      sodiumD: nutritions[editIdx].sodiumD,
-      carbsD: nutritions[editIdx].carbsD,
-      fiberD: nutritions[editIdx].fiberD,
-      sugarsD: nutritions[editIdx].sugarsD,
-      proteinD: nutritions[editIdx].proteinD,
-      vitaminAD: nutritions[editIdx].vitaminAD,
-      vitaminCD: nutritions[editIdx].vitaminCD,
-      vitaminDD: nutritions[editIdx].vitaminDD,
-      calciumD: nutritions[editIdx].calciumD,
-      ironD: nutritions[editIdx].ironD,
-      potassiumD: nutritions[editIdx].potassiumD,
-      foodNameBB: nutritions[editIdx].foodNameBB,
-      caloriesBB: nutritions[editIdx].caloriesBB,
-      saturatedBB: nutritions[editIdx].saturatedBB,
-      transBB: nutritions[editIdx].transBB,
-      polyunsaturatedBB: nutritions[editIdx].polyunsaturatedBB,
-      monosaturatedBB: nutritions[editIdx].monosaturatedBB,
-      cholesterolBB: nutritions[editIdx].cholesterolBB,
-      sodiumBB: nutritions[editIdx].sodiumBB,
-      carbsBB: nutritions[editIdx].carbsBB,
-      fiberBB: nutritions[editIdx].fiberBB,
-      sugarsBB: nutritions[editIdx].sugarsBB,
-      proteinBB: nutritions[editIdx].proteinBB,
-      vitaminABB: nutritions[editIdx].vitaminABB,
-      vitaminCBB: nutritions[editIdx].vitaminCBB,
-      vitaminDBB: nutritions[editIdx].vitaminDBB,
-      calciumBB: nutritions[editIdx].calciumBB,
-      ironBB: nutritions[editIdx].ironBB,
-      potassiumBB: nutritions[editIdx].potassiumBB,
-      foodNameBed: nutritions[editIdx].foodNameBed,
-      caloriesBed: nutritions[editIdx].caloriesBed,
-      saturatedBed: nutritions[editIdx].saturatedBed,
-      transBed: nutritions[editIdx].transBed,
-      polyunsaturatedBed: nutritions[editIdx].polyunsaturatedBed,
-      monosaturatedBed: nutritions[editIdx].monosaturatedBed,
-      cholesterolBed: nutritions[editIdx].cholesterolBed,
-      sodiumBed: nutritions[editIdx].sodiumBed,
-      carbsBed: nutritions[editIdx].carbsBed,
-      fiberBed: nutritions[editIdx].fiberBed,
-      sugarsBed: nutritions[editIdx].sugarsBed,
-      proteinBed: nutritions[editIdx].proteinBed,
-      vitaminABed: nutritions[editIdx].vitaminABed,
-      vitaminCBed: nutritions[editIdx].vitaminCBed,
-      vitaminDBed: nutritions[editIdx].vitaminDBed,
-      calciumBed: nutritions[editIdx].calciumBed,
-      ironBed: nutritions[editIdx].ironBed,
-      potassiumBed: nutritions[editIdx].potassiumBed,
-    }).catch((err) => console.log(err));
+    await editNutrition(user, nutritions, editIdx);
   };
 
   stopEditingReading = async () => {
@@ -1721,6 +1587,59 @@ export default class NavBar extends Component {
     this.getReadings(user.id);
   };
 
+  stopEditingWeight = async () => {
+    const { editIdx, user, weights } = this.state;
+    let kg = 0, lbs = 0, bmi = 0, totalKg = 0, totalLbs = 0, totalBmi = 0;
+
+    this.setState({ editIdx: -1 });
+
+    if (weights[editIdx].kg !== '' || weights[editIdx].kg !== 0) {
+      kg = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(
+          weights.kg, 10)),
+        0
+      );
+      totalLbs = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(
+          (weights.kg * 2.20462)
+            .toFixed(2), 10)),
+        0
+      );
+      totalBmi = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(
+          Number((weights.kg / (1.676 * 1.676))
+            .toFixed(2)), 10)),
+        0
+      );
+      weights[editIdx].kg = kg;
+      weights[editIdx].lbs = totalLbs;
+      weights[editIdx].bmi = totalBmi;
+    }
+    if (weights[editIdx].lbs !== '' && weights[editIdx].lbs !== 0) {
+      lbs = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(weights.lbs, 10)),
+        0
+      );
+      totalKg = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(
+          (weights.lbs / 2.20462)
+            .toFixed(2), 10)),
+        0
+      );
+      totalBmi = weights.reduce(
+        (Totaldata, weights) => (Totaldata = parseFloat(
+          Number((weights.lbs / (66 * 66) * 703)
+            .toFixed(2)), 10)),
+        0
+      );
+      weights[editIdx].lbs = lbs;
+      weights[editIdx].kg = totalKg;
+      weights[editIdx].bmi = totalBmi;
+    }
+    console.log(totalKg, lbs, totalBmi);
+    await editWeight(user, weights, editIdx);
+  }
+
   handlePreference = (e) => {
     const preference =
       e.target.type === "checkbox" ? e.target.checked : Number(e.target.value);
@@ -1737,6 +1656,7 @@ export default class NavBar extends Component {
     const {
       timesPD,
       chkNutrition,
+      chkWeight,
       chkMeds,
       chkMedsB,
       chkMedsL,
@@ -1763,6 +1683,7 @@ export default class NavBar extends Component {
       user_id: user.id,
       timesPD,
       chkNutrition: `${timesPD > 2 && chkNutrition ? 1 : 0}`,
+      chkWeight: `${timesPD > 2 && chkWeight ? 1 : 0}`,
       chkMeds: `${timesPD > 2 && chkMeds ? 1 : 0}`,
       chkMedsB: `${timesPD > 2 && chkMedsB ? 1 : 0}`,
       chkMedsL: `${timesPD > 2 && chkMedsL ? 1 : 0}`,
@@ -1788,6 +1709,7 @@ export default class NavBar extends Component {
             ...this.state.preference,
             timesPD,
             chkNutrition,
+            chkWeight,
             chkMeds,
             chkMedsB,
             chkMedsL,
@@ -1906,6 +1828,7 @@ export default class NavBar extends Component {
           this.getNutritions(user.id);
           this.getPreference(user.id);
           this.getReadings(user.id);
+          this.getWeights(user.id);
         }
       })
       .catch((err) => console.log(err));
@@ -1991,6 +1914,16 @@ export default class NavBar extends Component {
 
     this.setState((state) => ({
       readings: state.readings.map((row, j) =>
+        j === i ? { ...row, [name]: value } : row
+      ),
+    }));
+  };
+
+  handleWeightChange = (e, name, i) => {
+    const { value } = e.target;
+
+    this.setState((state) => ({
+      weights: state.weights.map((row, j) =>
         j === i ? { ...row, [name]: value } : row
       ),
     }));
@@ -2118,11 +2051,12 @@ export default class NavBar extends Component {
   };
 
   getPreference = async (user_id) => {
+    const { preferences } = this.state;
     const response = await fetch(`/bgtracker/preferences/${user_id}`);
     const data = await response.json();
 
     this.setState({ preference: data.results });
-    const { preferences } = this.state;
+
     let preference = preferences.find(
       (preference) => preference.user_id === user_id
     );
@@ -2135,6 +2069,7 @@ export default class NavBar extends Component {
           user_id: preference.user_id,
           timesPD: preference.timesPD,
           chkNutrition: preference.chkNutrition,
+          chkWeight: preference.chkWeight,
           chkMeds: preference.chkMeds,
           chkMedsB: preference.chkMedsB,
           chkMedsL: preference.chkMedsL,
@@ -2157,6 +2092,7 @@ export default class NavBar extends Component {
       });
       if (
         preference.chkNutrition === 0 &&
+        preference.chkWeight === 0 &&
         preference.chkMeds === 0 &&
         preference.chkMedsB === 0 &&
         preference.chkMedsL === 0 &&
@@ -2173,6 +2109,7 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: false,
+            chkWeight: false,
             chkMeds: false,
             chkMedsB: false,
             chkMedsL: false,
@@ -2195,6 +2132,7 @@ export default class NavBar extends Component {
         });
       } else if (
         preference.chkNutrition === 1 &&
+        preference.chkWeight === 1 &&
         preference.chkMeds === 1 &&
         preference.chkMedsB === 1 &&
         preference.chkMedsL === 1 &&
@@ -2211,6 +2149,7 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: true,
+            chkWeight: true,
             chkMeds: true,
             chkMedsB: true,
             chkMedsL: true,
@@ -2233,6 +2172,7 @@ export default class NavBar extends Component {
         });
       } else if (
         preference.chkNutrition === 0 &&
+        preference.chkWeight === 0 &&
         preference.chkMeds === 0 &&
         preference.chkMedsB === 0 &&
         preference.chkMedsL === 0 &&
@@ -2249,6 +2189,7 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: false,
+            chkWeight: false,
             chkMeds: false,
             chkMedsB: false,
             chkMedsL: false,
@@ -2316,6 +2257,13 @@ export default class NavBar extends Component {
     this.getUsers();
     this.getPreferences();
   }
+
+  getWeights = async (user_id) => {
+    const response = await fetch(`/bgtracker/weights/${user_id}`);
+    const data = await response.json();
+
+    this.setState({ weights: data.results });
+  };
 
   getA1CChartDataColaberated = () => {
     const { A1CLabels, readings, rate } = this.state;
@@ -2757,8 +2705,9 @@ export default class NavBar extends Component {
       bgChartData,
       bpChartData,
       medications,
-      //nutritions,
       readings,
+      weights,
+      //nutritions,
       bloodpressures,
     } = this.state;
     const {
@@ -2778,6 +2727,7 @@ export default class NavBar extends Component {
     const {
       user_id,
       timesPD,
+      chkWeight,
       chkNutrition,
       chkMeds,
       chkMedsB,
@@ -2831,16 +2781,12 @@ export default class NavBar extends Component {
             ) : (
               ""
             )}
-            {(timesPD === 1 && chkBP) || (timesPD === 2 && chkBP) ? (
+            {timesPD >= 3 && chkWeight ? (
               <NavBarLink>
-                <StyledButton to={"/bpchart"}>BP Chart</StyledButton>
+                <StyledButton to={"/weighttracker"}>Weight Tracker</StyledButton>
               </NavBarLink>
-            ) : !isLogedIn ? (
-              ""
             ) : (
-              <NavBarLink>
-                <StyledButton to={"/bgchart"}>BG Chart</StyledButton>
-              </NavBarLink>
+              ""
             )}
             {timesPD >= 3 && chkBP ? (
               <NavBarLink>
@@ -4114,6 +4060,39 @@ export default class NavBar extends Component {
                 ]}
               />
             </Route>
+            <Route path="/weighttracker">
+              <TableWeights
+                add={this.addWeight}
+                A1C={A1C}
+                editIdx={editIdx}
+                startEditing={this.startEditingWeight}
+                stopEditing={this.stopEditingWeight}
+                handleChange={this.handleWeightChange}
+                weights={weights}
+                header={[
+                  {
+                    name: "Date",
+                    prop: "date",
+                    type: "date",
+                  },
+                  {
+                    name: "KiloGrams(kg)",
+                    prop: "kg",
+                    type: "number",
+                  },
+                  {
+                    name: "Pounds(lbs)",
+                    prop: "lbs",
+                    type: "number",
+                  },
+                  {
+                    name: "Body Mass Index(BMI)",
+                    prop: "bmi",
+                    type: "number",
+                  },
+                ]}
+              />
+            </Route>
             <Route path="/bgchart">
               <BGChart chartData={bgChartData} />
             </Route>
@@ -4190,6 +4169,7 @@ export default class NavBar extends Component {
                 userId={user_id}
                 timesPD={timesPD}
                 chkNutrition={chkNutrition}
+                chkWeight={chkWeight}
                 chkMeds={chkMeds}
                 chkMedsB={chkMedsB}
                 chkMedsL={chkMedsL}
