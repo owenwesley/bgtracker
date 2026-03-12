@@ -8,7 +8,6 @@ router.post('/:id', (req, res) => {
     user_id = req.body.user_id,
     timesPD = req.body.timesPD,
     chkNutrition = req.body.chkNutrition,
-    chkWeight = req.body.chkWeight,
     chkMeds = req.body.chkMeds,
     chkMedsB = req.body.chkMedsB,
     chkMedsL = req.body.chkMedsL,
@@ -29,20 +28,17 @@ router.post('/:id', (req, res) => {
     carbRatio = req.body.carbRatio,
   } = req.query;
   const sql =
-    `SET @id=?;SET @user_id=?;SET @timesPD=?;SET @chkNutrition=?;
-    SET @chkWeight=?;SET @chkMeds=?;SET @chkMedsB=?;SET @chkMedsL=?;
-    SET @chkMedsD=?;SET @chkMedsBed=?;SET @chkInsulin=?;
-    SET @typInsulin=?;SET @chkBP=?;SET @chkSlidingScale=?;
-    SET @slidingScale1=?;SET @slidingScale2a=?;
-    SET @slidingScale2b=?;SET @slidingScale3a=?;
-    SET @slidingScale3b=?;SET @slidingScale4a=?;
-    SET @slidingScale4b=?;SET @slidingScale5=?;SET @carbRatio=?;
-     CALL updatePreference(@id,@user_id,@timesPD,@chkNutrition,
-     @chkWeight,@chkMeds,@chkMedsB,@chkMedsL,@chkMedsD,@chkMedsBed,
-      @chkInsulin,@typInsulin,@chkBP,@chkSlidingScale,@slidingScale1,
-      @slidingScale2a,@slidingScale2b,@slidingScale3a,
-      @slidingScale3b,@slidingScale4a,@slidingScale4b,@slidingScale5,
-      @carbRatio);`;
+    'SET @id=?;SET @user_id=?;SET @timesPD=?;SET @chkNutrition=?;\
+    SET @chkMeds=?;SET @chkMedsB=?;SET @chkMedsL=?;SET @chkMedsD=?;\
+    SET @chkMedsBed=?;SET @chkInsulin=?;SET @typInsulin=?;SET @chkBP=?;\
+    SET @chkSlidingScale=?;SET @slidingScale1=?;SET @slidingScale2a=?;\
+    SET @slidingScale2b=?;SET @slidingScale3a=?;SET @slidingScale3b=?;\
+    SET @slidingScale4a=?;SET @slidingScale4b=?;SET @slidingScale5=?;\
+    SET @carbRatio=?; CALL updatePreference(@id,@user_id,@timesPD,\
+      @chkNutrition,@chkMeds,@chkMedsB,@chkMedsL,@chkMedsD,@chkMedsBed,\
+      @chkInsulin,@typInsulin,@chkBP,@chkSlidingScale,@slidingScale1,\
+      @slidingScale2a,@slidingScale2b,@slidingScale3a,@slidingScale3b,\
+      @slidingScale4a,@slidingScale4b,@slidingScale5,@carbRatio);';
 
   connection.query(
     sql,
@@ -51,7 +47,6 @@ router.post('/:id', (req, res) => {
       user_id,
       timesPD,
       chkNutrition,
-      chkWeight,
       chkMeds,
       chkMedsB,
       chkMedsL,
@@ -75,7 +70,7 @@ router.post('/:id', (req, res) => {
       if (err) {
         return res.send(err.message);
       } else {
-        res.send(`Successfully Edited Row ${id}`);
+        res.send('Successfully Edited Row:');
       }
     }
   );

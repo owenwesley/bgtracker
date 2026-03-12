@@ -11346,7 +11346,7 @@ const Tables = ({
         },
         {
           name: "Insulin",
-          prop: "insulinB",
+          prop: "insulinSB",
           type: "number",
         },
         {
@@ -11522,7 +11522,7 @@ const Tables = ({
         },
         {
           name: "Insulin",
-          prop: "insulinB",
+          prop: "insulinSB",
           type: "number",
         },
         {

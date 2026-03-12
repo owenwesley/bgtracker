@@ -5,7 +5,6 @@ const connection = require('../../db/Connection');
 const SELECT_ALL_PREFERENCES_QUERY =
   `SELECT id, user_id, timesPD,` +
   `IF(chkNutrition, 'true','false'), chkNutrition, ` +
-  `IF(chkWeight, 'true','false'), chkWeight, ` +
   `IF(chkMeds, 'true','false'), chkMeds, ` +
   `IF(chkMedsB, 'true','false'), chkMedsB, ` +
   `IF(chkMedsL, 'true','false'), chkMedsL, ` +

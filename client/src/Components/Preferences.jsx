@@ -92,21 +92,6 @@ export default class Preferences extends Component {
             {this.props.chkNutrition ? (
               <div>
                 <CheckBox
-                  name='chkWeight'
-                  checked={Boolean(this.props.chkWeight)}
-                  disabled={false}
-                  onChange={this.props.handlePreference}
-                />
-                <label style={{ color: 'black' }} htmlFor='chkWeight'>
-                  Take Weight
-                </label>
-              </div>
-            ) : (
-              ''
-            )}
-            {this.props.chkWeight ? (
-              <div>
-                <CheckBox
                   name='chkMeds'
                   checked={Boolean(this.props.chkMeds)}
                   disabled={false}
@@ -161,7 +146,7 @@ export default class Preferences extends Component {
             ) : (
               ''
             )}
-            {this.props.chkMedsB || this.props.chkMedsL || this.props.chkMedsD || this.props.chkMedsBed ? (
+            {this.props.chkNutrition ? (
               <div>
                 <CheckBox
                   name='chkInsulin'
