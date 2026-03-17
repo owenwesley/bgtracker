@@ -1824,6 +1824,8 @@ export default class NavBar extends Component {
 
   handleEditPreference = async () => {
     const {
+      id,
+      user_id,
       timesPD,
       chkNutrition,
       chkWeight,
@@ -1879,6 +1881,8 @@ export default class NavBar extends Component {
         this.setState({
           preference: {
             ...this.state.preference,
+            id,
+            user_id,
             timesPD,
             chkNutrition,
             chkWeight,
