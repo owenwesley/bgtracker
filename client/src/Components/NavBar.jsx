@@ -1879,6 +1879,8 @@ export default class NavBar extends Component {
         this.setState({
           preference: {
             ...this.state.preference,
+            id,
+            user_id: user.id,
             timesPD,
             chkNutrition,
             chkWeight,
