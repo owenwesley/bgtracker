@@ -1,4 +1,21 @@
 {
     "editor.formatOnSave": true,
-    "notebook.formatOnSave.enabled": true
+    "notebook.formatOnSave.enabled": true,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "74.208.32.246",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "ionos",
+            "username": "owenwesley1976",
+            "database": "bgtracker",
+            "askForPassword": true
+        }
+    ]
 }

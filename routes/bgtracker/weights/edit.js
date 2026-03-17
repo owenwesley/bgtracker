@@ -12,7 +12,7 @@ router.post('/:user_id', (req, res) => {
     bmi = req.body.bmi,
   } = req.query;
 
-  const sql = `UPDATE weights SET id=?,user_id=?,date=?,kg=?,lbs=?,bmi=?;`;
+  const sql = `UPDATE weights SET id=?,user_id=?,date=?,kg=?,lbs=?,bmi=? WHERE id=? AND user_id=?`;
 
   connection.query(
     sql,
@@ -23,6 +23,8 @@ router.post('/:user_id', (req, res) => {
       kg,
       lbs,
       bmi,
+      id,
+      user_id,
     ],
     (err, results, rows) => {
       if (err) {

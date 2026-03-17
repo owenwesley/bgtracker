@@ -2,6 +2,8 @@ export const Preference = {
   user_id: 0,
   timesPD: 0,
   chkNutrition: false,
+  chkWeight: false,
+  height: 0,
   chkMeds: false,
   chkMedsB: false,
   chkMedsL: false,

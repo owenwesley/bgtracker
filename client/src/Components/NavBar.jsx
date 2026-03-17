@@ -9,6 +9,7 @@ import { deleteNutrition, removeNutrition } from "./Utils/Nutrition";
 import { deleteReading, editReading, removeReading } from "./Utils/Readings";
 import { postFetch } from "../Utils/Fetch";
 import TableMeds from "./Tables/TableMeds";
+import TableWeights from "./Tables/TableWeights";
 import Help from "./Help";
 import TableOneBP from "./Tables/TableOneBP";
 import { StyledDiv } from "./Styles/StyledDiv.styled";
@@ -26,6 +27,7 @@ import {
   colordataTimes,
   dataTimes,
 } from "./Utils/ChartData";
+import { addWeight } from "./Utils/Weights";
 // import TableNutrition from './Tables/TableNutrition';
 // import TableNutritionTwo from './Tables/TableNutritionTwo';
 // import TableNutritionThree from './Tables/TableNutritionThree';
@@ -629,6 +631,42 @@ export default class NavBar extends Component {
     this.findAvg();
   };
 
+  addWeight = async () => {
+    const { date, kg, lbs, bmi } = this.state.weight;
+    const { editIdx, user, weights } = this.state;
+
+    if (weights.length >= 90) {
+      await deleteWeight(user, weights, editIdx);
+      removeweight(0, weights);
+      this.setState({
+        weights: [
+          ...weights,
+          {
+            user_id: user.id,
+            date: date,
+            kg: kg,
+            lbs: lbs,
+            bmi: bmi,
+          },
+        ],
+      });
+    } else {
+      this.setState({
+        weights: [
+          ...weights,
+          {
+            user_id: user.id,
+            date: date,
+            kg: 0,
+            lbs: 0,
+            bmi: 0,
+          },
+        ],
+      });
+    }
+    await addWeight(user, date, kg, lbs, bmi);
+  };
+
   startEditingBloodPressure = (i) => {
     const { users } = this.state;
     const { userName } = this.state.user;
@@ -658,6 +696,14 @@ export default class NavBar extends Component {
     const { userName } = this.state.user;
 
     this.getReadings(users.find((user) => user.userName === userName).id);
+    this.setState({ editIdx: i });
+  };
+
+  startEditingWeight = (i) => {
+    const { users } = this.state;
+    const { userName } = this.state.user;
+
+    this.getWeights(users.find((user) => user.userName === userName).id);
     this.setState({ editIdx: i });
   };
 
@@ -1721,6 +1767,49 @@ export default class NavBar extends Component {
     this.getReadings(user.id);
   };
 
+  stopEditingWeight = async () => {
+    const { editIdx, user, weights } = this.state;
+    const { height } = this.state.preference;
+    let kg = 0, lbs = 0, bmi = 0;
+
+    this.setState({ editIdx: -1 });
+
+    kg = weights.reduce(
+      (Totaldata, weights) => (Totaldata = parseInt(weights.kg, 10)),
+      0
+    );
+
+    lbs = weights.reduce(
+      (Totaldata, weights) => (Totaldata = parseInt(weights.lbs, 10)),
+      0
+    );
+    if (weights[editIdx].kg !== 0 && weights[editIdx].kg !== '') {
+      kg = parseFloat(weights[editIdx].kg).toFixed(2);
+      lbs = parseFloat((weights[editIdx].kg * 2.20462).toFixed(2));
+      bmi = parseFloat(
+        (weights[editIdx].kg / Math.pow(height / 39.37, 2)).toFixed(2)
+      );
+    }
+
+    if (weights[editIdx].lbs !== 0 && weights[editIdx].lbs !== '') {
+      lbs = parseFloat(weights[editIdx].lbs).toFixed(2);
+      kg = parseFloat((weights[editIdx].lbs / 2.20462).toFixed(2));
+      bmi = parseFloat(
+        (weights[editIdx].lbs / Math.pow(height, 2) * 703).toFixed(2)
+      );
+    }
+
+    await postFetch(`/bgtracker/weights/edit/${user.id}`, {
+      id: weights[editIdx].id,
+      user_id: user.id,
+      date: weights[editIdx].date,
+      kg,
+      lbs,
+      bmi,
+    }).catch((err) => console.log(err));
+    this.getWeights(user.id);
+  };
+
   handlePreference = (e) => {
     const preference =
       e.target.type === "checkbox" ? e.target.checked : Number(e.target.value);
@@ -1737,6 +1826,8 @@ export default class NavBar extends Component {
     const {
       timesPD,
       chkNutrition,
+      chkWeight,
+      height,
       chkMeds,
       chkMedsB,
       chkMedsL,
@@ -1763,6 +1854,8 @@ export default class NavBar extends Component {
       user_id: user.id,
       timesPD,
       chkNutrition: `${timesPD > 2 && chkNutrition ? 1 : 0}`,
+      chkWeight: `${timesPD > 2 && chkWeight ? 1 : 0}`,
+      height: `${timesPD > 2 && chkWeight ? height : 0}`,
       chkMeds: `${timesPD > 2 && chkMeds ? 1 : 0}`,
       chkMedsB: `${timesPD > 2 && chkMedsB ? 1 : 0}`,
       chkMedsL: `${timesPD > 2 && chkMedsL ? 1 : 0}`,
@@ -1788,6 +1881,8 @@ export default class NavBar extends Component {
             ...this.state.preference,
             timesPD,
             chkNutrition,
+            chkWeight,
+            height,
             chkMeds,
             chkMedsB,
             chkMedsL,
@@ -1813,7 +1908,7 @@ export default class NavBar extends Component {
   };
 
   handleSavePreference = async () => {
-    const { timesPD, chkNutrition, chkInsulin, typInsulin, chkBP } =
+    const { timesPD, chkNutrition, chkWeight, chkInsulin, typInsulin, chkBP } =
       this.state.preference;
     const { user, preferences } = this.state;
 
@@ -1821,6 +1916,7 @@ export default class NavBar extends Component {
       user_id: user.id,
       timesPD,
       chkNutrition,
+      chkWeight,
       chkInsulin,
       typInsulin,
       chkBP,
@@ -1833,6 +1929,7 @@ export default class NavBar extends Component {
               user_id: user.id,
               timesPD,
               chkNutrition,
+              chkWeight,
               chkInsulin,
               typInsulin,
               chkBP,
@@ -1844,10 +1941,12 @@ export default class NavBar extends Component {
   };
 
   handleUser = (e) => {
+    const { name, value } = e.target;
+
     this.setState({
       user: {
         ...this.state.user,
-        [e.target.name]: e.target.value,
+        [name]: value,
       },
     });
   };
@@ -1906,6 +2005,7 @@ export default class NavBar extends Component {
           this.getNutritions(user.id);
           this.getPreference(user.id);
           this.getReadings(user.id);
+          this.getWeights(user.id);
         }
       })
       .catch((err) => console.log(err));
@@ -1991,6 +2091,16 @@ export default class NavBar extends Component {
 
     this.setState((state) => ({
       readings: state.readings.map((row, j) =>
+        j === i ? { ...row, [name]: value } : row
+      ),
+    }));
+  };
+
+  handleWeightChange = (e, name, i) => {
+    const { value } = e.target;
+
+    this.setState((state) => ({
+      weights: state.weights.map((row, j) =>
         j === i ? { ...row, [name]: value } : row
       ),
     }));
@@ -2135,6 +2245,8 @@ export default class NavBar extends Component {
           user_id: preference.user_id,
           timesPD: preference.timesPD,
           chkNutrition: preference.chkNutrition,
+          chkWeight: preference.chkWeight,
+          height: preference.height,
           chkMeds: preference.chkMeds,
           chkMedsB: preference.chkMedsB,
           chkMedsL: preference.chkMedsL,
@@ -2157,6 +2269,7 @@ export default class NavBar extends Component {
       });
       if (
         preference.chkNutrition === 0 &&
+        preference.chkWeight === 0 &&
         preference.chkMeds === 0 &&
         preference.chkMedsB === 0 &&
         preference.chkMedsL === 0 &&
@@ -2173,6 +2286,8 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: false,
+            chkWeight: false,
+            height: 0,
             chkMeds: false,
             chkMedsB: false,
             chkMedsL: false,
@@ -2195,6 +2310,7 @@ export default class NavBar extends Component {
         });
       } else if (
         preference.chkNutrition === 1 &&
+        preference.chkWeight === 1 &&
         preference.chkMeds === 1 &&
         preference.chkMedsB === 1 &&
         preference.chkMedsL === 1 &&
@@ -2211,6 +2327,8 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: true,
+            chkWeight: true,
+            height: preference.height,
             chkMeds: true,
             chkMedsB: true,
             chkMedsL: true,
@@ -2233,6 +2351,7 @@ export default class NavBar extends Component {
         });
       } else if (
         preference.chkNutrition === 0 &&
+        preference.chkWeight === 0 &&
         preference.chkMeds === 0 &&
         preference.chkMedsB === 0 &&
         preference.chkMedsL === 0 &&
@@ -2249,6 +2368,8 @@ export default class NavBar extends Component {
             user_id: user_id,
             timesPD: preference.timesPD,
             chkNutrition: false,
+            chkWeight: false,
+            height: preference.height,
             chkMeds: false,
             chkMedsB: false,
             chkMedsL: false,
@@ -2310,6 +2431,13 @@ export default class NavBar extends Component {
     const data = await response.json();
 
     this.setState({ users: data.results });
+  };
+
+  getWeights = async (user_id) => {
+    const response = await fetch(`/bgtracker/weights/${user_id}`);
+    const data = await response.json();
+
+    this.setState({ weights: data.results });
   };
 
   componentDidMount() {
@@ -2757,6 +2885,7 @@ export default class NavBar extends Component {
       bgChartData,
       bpChartData,
       medications,
+      weights,
       //nutritions,
       readings,
       bloodpressures,
@@ -2779,6 +2908,8 @@ export default class NavBar extends Component {
       user_id,
       timesPD,
       chkNutrition,
+      chkWeight,
+      height,
       chkMeds,
       chkMedsB,
       chkMedsL,
@@ -2827,6 +2958,13 @@ export default class NavBar extends Component {
             {timesPD >= 3 && chkBP ? (
               <NavBarLink>
                 <StyledButton to={"/bptracker"}>BP Tracker</StyledButton>
+              </NavBarLink>
+            ) : (
+              ""
+            )}
+            {timesPD >= 3 && chkWeight ? (
+              <NavBarLink>
+                <StyledButton to={"/weighttracker"}>Weight Tracker</StyledButton>
               </NavBarLink>
             ) : (
               ""
@@ -4114,6 +4252,39 @@ export default class NavBar extends Component {
                 ]}
               />
             </Route>
+            <Route path="/weighttracker">
+              <TableWeights
+                add={this.addWeight}
+                A1C={A1C}
+                editIdx={editIdx}
+                startEditing={this.startEditingWeight}
+                stopEditing={this.stopEditingWeight}
+                handleChange={this.handleWeightChange}
+                weights={weights}
+                header={[
+                  {
+                    name: "Date",
+                    prop: "date",
+                    type: "date",
+                  },
+                  {
+                    name: "KG",
+                    prop: "kg",
+                    type: "number",
+                  },
+                  {
+                    name: "LBS",
+                    prop: "lbs",
+                    type: "number",
+                  },
+                  {
+                    name: "BMI",
+                    prop: "bmi",
+                    type: "number",
+                  },
+                ]}
+              />
+            </Route>
             <Route path="/bgchart">
               <BGChart chartData={bgChartData} />
             </Route>
@@ -4190,6 +4361,8 @@ export default class NavBar extends Component {
                 userId={user_id}
                 timesPD={timesPD}
                 chkNutrition={chkNutrition}
+                chkWeight={chkWeight}
+                height={height}
                 chkMeds={chkMeds}
                 chkMedsB={chkMedsB}
                 chkMedsL={chkMedsL}

@@ -3,12 +3,14 @@ const router = express.Router();
 const connection = require('../../../db/Connection');
 
 router.get('/:id', (req, res) => {
-  const sql = `DELETE FROM preferences WHERE id=${req.params.id}\
-    ORDER BY id LIMIT 1;\
+  const sql = `DELETE FROM preferences WHERE id=${req.params.id}
+    ORDER BY id LIMIT 1;
     CREATE TEMPORARY TABLE tmppreferences(
         user_id int not null,
         timesPD int not null,
         chkNutrition tinyint not null,
+        chkWeight tinyint not null,
+        height int not null,
         chkMeds tinyint not null,
         chkMedsB tinyint not null,
         chkMedsL tinyint not null,
@@ -27,12 +29,12 @@ router.get('/:id', (req, res) => {
         slidingScale4b int not null,
         slidingScale5 int not null,
         carbRatio int not null);
-      INSERT INTO tmppreferences(user_id,timesPD,chkNutrition,chkMeds,
+      INSERT INTO tmppreferences(user_id,timesPD,chkNutrition,chkWeight,height,chkMeds,
         chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,
         chkBP,chkSlidingScale,slidingScale1,slidingScale2a,slidingScale2b,
         slidingScale3a,slidingScale3b,slidingScale4a,slidingScale4b,
         slidingScale5,carbRatio)
-        SELECT user_id,timesPD,chkNutrition,chkMeds,
+        SELECT user_id,timesPD,chkNutrition,chkWeight,height,chkMeds,
         chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,
         chkBP,chkSlidingScale,slidingScale1,slidingScale2a,slidingScale2b,
         slidingScale3a,slidingScale3b,slidingScale4a,slidingScale4b,
@@ -43,6 +45,8 @@ router.get('/:id', (req, res) => {
       user_id int not null,
       timesPD int not null,
       chkNutrition tinyint not null,
+      chkWeight tinyint not null,
+      height int not null,
       chkMeds tinyint not null,
       chkMedsB tinyint not null,
       chkMedsL tinyint not null,
@@ -62,16 +66,17 @@ router.get('/:id', (req, res) => {
       slidingScale5 int not null,
       carbRatio int not null,
       primary key (id));
-    INSERT INTO preferences(user_id,timesPD,chkNutrition,chkMeds,
-      chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,
-      chkBP,chkSlidingScale,slidingScale1,slidingScale2a,slidingScale2b,
-      slidingScale3a,slidingScale3b,slidingScale4a,slidingScale4b,
-      slidingScale5,carbRatio)
-      SELECT user_id,timesPD,chkNutrition,chkMeds,
-      chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,
-      chkBP,chkSlidingScale,slidingScale1,slidingScale2a,slidingScale2b,
-      slidingScale3a,slidingScale3b,slidingScale4a,slidingScale4b,
-      slidingScale5,carbRatio FROM tmppreferences;
+    INSERT INTO preferences(user_id,timesPD,chkNutrition,chkWeight,
+     height,chkMeds,chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,
+     typInsulin,chkBP,chkSlidingScale,slidingScale1,slidingScale2a,
+     slidingScale2b,slidingScale3a,slidingScale3b,slidingScale4a,
+     slidingScale4b,slidingScale5,carbRatio)
+      SELECT user_id,timesPD,chkNutrition,chkWeight,height,chkMeds,
+       chkMedsB,chkMedsL,chkMedsD,chkMedsBed,chkInsulin,typInsulin,
+       chkBP,chkSlidingScale,slidingScale1,slidingScale2a,
+       slidingScale2b,slidingScale3a,slidingScale3b,slidingScale4a,
+       slidingScale4b,slidingScale5,carbRatio
+        FROM tmppreferences;
     DROP TEMPORARY TABLE tmppreferences;`;
 
   connection.query(sql, (err, results, rows) => {

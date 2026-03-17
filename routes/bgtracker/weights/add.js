@@ -13,7 +13,7 @@ router.post('/:user_id', (req, res) => {
 
   const INSERT_WEIGHTS_QUERY =
     `INSERT INTO weights (user_id,date,kg,lbs,bmi)
-     VALUES (${user_id},curdate(),${kg},${lbs},${bmi});\
+     VALUES (${user_id},curdate(),${kg},${lbs},${bmi});
     CREATE TEMPORARY TABLE tmpweights(
       user_id int not null,
       date text not null,

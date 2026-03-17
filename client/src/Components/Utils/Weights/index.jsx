@@ -1,4 +1,14 @@
-import { postFetch } from "../../../Utils/Fetch";
+import { postFetch } from '../../../Utils/Fetch';
+
+export const addWeight = async (user, date, kg, lbs, bmi) => {
+    await postFetch(`/bgtracker/weights/add/${user.id}`, {
+        user_id: user.id,
+        date: date,
+        kg: kg,
+        lbs: lbs,
+        bmi: bmi,
+    }).catch((err) => console.log(err));
+};
 
 export const deleteWeight = async (user, weights, editIdx) => {
     await postFetch(`/bgtracker/weights/delete/${user.id}`, {
@@ -18,7 +28,7 @@ export const editWeight = async (user, weights, editIdx) => {
 };
 
 export const removeWeight = (i, weights) => {
-    const arr = [...weights];
+    const arr = weights;
     arr.splice(i, 1);
-    return arr;
+    weights = arr;
 };

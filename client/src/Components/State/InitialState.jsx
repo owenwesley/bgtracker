@@ -6,6 +6,7 @@ import { Nutrition } from "./Nutrition";
 import { Preference } from "./Preference";
 import { Reading } from "./Reading";
 import { User } from "./User";
+import { Weight } from "./Weight";
 
 export const InitialState = {
   A1CLabels: A1CLabels,
@@ -26,6 +27,8 @@ export const InitialState = {
   reading: Reading,
   users: [],
   user: User,
+  weights: [],
+  weight: Weight,
   Avg: 0,
   AvgBP: 0,
   A1C: 0.0,

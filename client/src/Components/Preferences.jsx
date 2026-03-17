@@ -14,6 +14,7 @@ import {
   slidingScale4b,
   slidingScale5,
   timesPD,
+  height,
   typInsulin,
 } from './Preferences/Preference';
 
@@ -52,19 +53,7 @@ export default class Preferences extends Component {
             </MenuItem>
           ))}
         </TextField>
-        {this.props.timesPD === 2 ? (
-          <div>
-            <CheckBox
-              name='chkBP'
-              checked={Boolean(this.props.chkBP)}
-              disabled={false}
-              onChange={this.props.handlePreference}
-            />
-            <label style={{ color: 'black' }} htmlFor='chkBloodPressure'>
-              Blood Pressure
-            </label>
-          </div>
-        ) : this.props.timesPD === 1 ? (
+        {this.props.timesPD === 1 || this.props.timesPD === 2 ? (
           <div>
             <CheckBox
               name='chkBP'
@@ -90,6 +79,41 @@ export default class Preferences extends Component {
               </label>
             </div>
             {this.props.chkNutrition ? (
+              <div>
+                <CheckBox
+                  name='chkWeight'
+                  checked={Boolean(this.props.chkWeight)}
+                  disabled={false}
+                  onChange={this.props.handlePreference}
+                />
+                <label style={{ color: 'black' }} htmlFor='chkWeight'>
+                  Track Weight
+                </label>
+              </div>
+            ) : (
+              ''
+            )}
+            {this.props.chkWeight ? (
+              <div>
+                <TextField
+                  name='height'
+                  select
+                  label='Height in Inches'
+                  value={this.props.height}
+                  onChange={this.props.handlePreference}
+                  helperText='Please select your height in inches'
+                >
+                  {height.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+            ) : (
+              ''
+            )}
+            {this.props.height !== '0' ? (
               <div>
                 <CheckBox
                   name='chkMeds'
@@ -146,7 +170,7 @@ export default class Preferences extends Component {
             ) : (
               ''
             )}
-            {this.props.chkNutrition ? (
+            {this.props.chkMeds ? (
               <div>
                 <CheckBox
                   name='chkInsulin'

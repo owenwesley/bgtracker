@@ -3,7 +3,7 @@ const router = express.Router();
 const connection = require('../../../db/Connection');
 
 router.get('/:user_id', (req, res) => {
-  const sql = `DELETE FROM readings WHERE user_id=${req.params.user_id};\
+  const sql = `DELETE FROM weights WHERE user_id=${req.params.user_id};\
     CREATE TEMPORARY TABLE tmpweights(
       user_id int not null,
       date text not null,
