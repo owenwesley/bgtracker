@@ -31,19 +31,13 @@ router.post('/:id', (req, res) => {
   } = req.query;
 
   const sql =
-    `SET @id=?;SET @user_id=?;SET @timesPD=?;SET @chkNutrition=?;\
-    SET @chkWeight=?;SET @height=?;SET @chkMeds=?;SET @chkMedsB=?;\
-    SET @chkMedsL=?;SET @chkMedsD=?;SET @chkMedsBed=?;SET @chkInsulin=?;\
-    SET @typInsulin=?;SET @chkBP=?;SET @chkSlidingScale=?;\
-    SET @slidingScale1=?;SET @slidingScale2a=?;SET @slidingScale2b=?;\
-    SET @slidingScale3a=?;SET @slidingScale3b=?;SET @slidingScale4a=?;\
-    SET @slidingScale4b=?;SET @slidingScale5=?;SET @carbRatio=?;\
-     CALL updatePreference(@id,@user_id,@timesPD,@chkNutrition,
-      @chkWeight,@height,@chkMeds,@chkMedsB,@chkMedsL,@chkMedsD,
-      @chkMedsBed,@chkInsulin,@typInsulin,@chkBP,@chkSlidingScale,
-      @slidingScale1,@slidingScale2a,@slidingScale2b,@slidingScale3a,
-      @slidingScale3b,@slidingScale4a,@slidingScale4b,@slidingScale5,
-      @carbRatio);`;
+    `UPDATE preferences SET id=?, user_id=?, timesPD=?, chkNutrition=?,
+     chkWeight=?, height=?, chkMeds=?, chkMedsB=?, chkMedsL=?,
+     chkMedsD=?, chkMedsBed=?, chkInsulin=?, typInsulin=?, chkBP=?,
+     chkSlidingScale=?, slidingScale1=?, slidingScale2a=?,
+     slidingScale2b=?, slidingScale3a=?, slidingScale3b=?,
+     slidingScale4a=?, slidingScale4b=?, slidingScale5=?, carbRatio=?
+      WHERE id=? AND user_id=?`;
 
   connection.query(
     sql,
