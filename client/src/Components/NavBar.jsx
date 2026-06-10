@@ -20,6 +20,7 @@ import { bpLabels, Labels120 } from "./State/Labels";
 import {
   BGChartData,
   BPChartData,
+  avgTimes,
   backgroundColor,
   borderColor,
   borderdataTimes,
@@ -27,7 +28,7 @@ import {
   colordataTimes,
   dataTimes,
 } from "./Utils/ChartData";
-import { addWeight } from "./Utils/Weights";
+import { addWeight, editWeight } from "./Utils/Weights";
 // import TableNutrition from './Tables/TableNutrition';
 // import TableNutritionTwo from './Tables/TableNutritionTwo';
 // import TableNutritionThree from './Tables/TableNutritionThree';
@@ -1799,14 +1800,11 @@ export default class NavBar extends Component {
       );
     }
 
-    await postFetch(`/bgtracker/weights/edit/${user.id}`, {
-      id: weights[editIdx].id,
-      user_id: user.id,
-      date: weights[editIdx].date,
-      kg,
-      lbs,
-      bmi,
-    }).catch((err) => console.log(err));
+    weights[editIdx].kg = kg;
+    weights[editIdx].lbs = lbs;
+    weights[editIdx].bmi = bmi;
+
+    await editWeight(user, weights, editIdx);
     this.getWeights(user.id);
   };
 
@@ -2457,6 +2455,8 @@ export default class NavBar extends Component {
       Day1,
       totalTimes7,
       Day7,
+      totalTimes14,
+      Day14,
       totalTimes30,
       Day30,
       totalTimes60,
@@ -2467,68 +2467,72 @@ export default class NavBar extends Component {
       Day120,
     } = colaberated(readings, timesPD, rate);
 
+    const avg1 = totalTimes / (timesPD || 1);
+    const a1c1 = (avg1 * rate).toFixed(2);
+    const avg7 = totalTimes7 / ((timesPD || 1) * 7);
+    const a1c7 = (avg7 * rate).toFixed(2);
+    const avg14 = totalTimes14 / ((timesPD || 1) * 14);
+    const a1c14 = (avg14 * rate).toFixed(2);
+    const avg30 = totalTimes30 / ((timesPD || 1) * 30);
+    const a1c30 = (avg30 * rate).toFixed(2);
+    const avg60 = totalTimes60 / ((timesPD || 1) * 60);
+    const a1c60 = (avg60 * rate).toFixed(2);
+    const avg90 = totalTimes90 / ((timesPD || 1) * 90);
+    const a1c90 = (avg90 * rate).toFixed(2);
+    const avg120 = totalTimes120 / ((timesPD || 1) * 120);
+    const a1c120 = (avg120 * rate).toFixed(2);
+
     return this.setState({
       a1cChartDataColaberated: {
         labels: A1CLabels,
         datasets: [
           {
-            label: "1 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes / (timesPD * 1)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes / (timesPD * 1)) * rate).toFixed(2)
-            ),
+            label: `Day 1`,
+            avg: avg1.toFixed(2),
+            backgroundColor: backgroundColor(a1c1),
+            borderColor: borderColor(a1c1),
             data: Day1,
           },
           {
-            label: "7 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes7 / (timesPD * 7)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes7 / (timesPD * 7)) * rate).toFixed(2)
-            ),
+            label: `Day 7`,
+            avg: avg7.toFixed(2),
+            backgroundColor: backgroundColor(a1c7),
+            borderColor: borderColor(a1c7),
             data: Day7,
           },
           {
-            label: "30 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes30 / (timesPD * 30)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes30 / (timesPD * 30)) * rate).toFixed(2)
-            ),
+            label: `Day 14`,
+            avg: avg14.toFixed(2),
+            backgroundColor: backgroundColor(a1c14),
+            borderColor: borderColor(a1c14),
+            data: Day14,
+          },
+          {
+            label: `Day 30`,
+            avg: avg30.toFixed(2),
+            backgroundColor: backgroundColor(a1c30),
+            borderColor: borderColor(a1c30),
             data: Day30,
           },
           {
-            label: "60 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes60 / (timesPD * 60)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes60 / (timesPD * 60)) * rate).toFixed(2)
-            ),
+            label: `Day 60`,
+            avg: avg60.toFixed(2),
+            backgroundColor: backgroundColor(a1c60),
+            borderColor: borderColor(a1c60),
             data: Day60,
           },
           {
-            label: "90 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes90 / (timesPD * 90)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes90 / (timesPD * 90)) * rate).toFixed(2)
-            ),
+            label: `Day 90`,
+            avg: avg90.toFixed(2),
+            backgroundColor: backgroundColor(a1c90),
+            borderColor: borderColor(a1c90),
             data: Day90,
           },
           {
-            label: "120 Day",
-            backgroundColor: backgroundColor(
-              ((totalTimes120 / (timesPD * 120)) * rate).toFixed(2)
-            ),
-            borderColor: borderColor(
-              ((totalTimes120 / (timesPD * 120)) * rate).toFixed(2)
-            ),
+            label: `Day 120`,
+            avg: avg120.toFixed(2),
+            backgroundColor: backgroundColor(a1c120),
+            borderColor: borderColor(a1c120),
             data: Day120,
           },
         ],
@@ -2549,6 +2553,7 @@ export default class NavBar extends Component {
             backgroundColor: colordataTimes(readings, rate, timesPD),
             borderColor: borderdataTimes(readings, rate, timesPD),
             data: dataTimes(readings, rate, timesPD),
+            avg: avgTimes(readings, timesPD),
           },
         ],
       },
@@ -2940,7 +2945,7 @@ export default class NavBar extends Component {
           <p>
             Welcome, {firstName} {lastName}
           </p>
-          {Avg !== 0 ? <p>Average Blood Sugar: {Avg.toFixed(2)}</p> : ""}
+          {/* {Avg !== 0 ? <p>Average Blood Sugar: {Avg.toFixed(2)}</p> : ""} */}
           {(timesPD === 1 && chkBP) || (timesPD === 2 && chkBP) ? (
             <p>Average Blood Pressure: {AvgBp}</p>
           ) : timesPD >= 3 && chkBP ? (
@@ -2948,7 +2953,7 @@ export default class NavBar extends Component {
           ) : (
             ""
           )}
-          {A1C !== 0 ? <p>A1C: {A1C.toFixed(2)} %</p> : ""}
+          {/* {A1C !== 0 ? <p>A1C: {A1C.toFixed(2)} %</p> : ""} */}
           <ul>
             {(timesPD === 1 && chkBP) || (timesPD === 2 && chkBP) ? (
               <NavBarLink>

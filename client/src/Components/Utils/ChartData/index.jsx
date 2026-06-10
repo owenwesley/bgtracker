@@ -53,6 +53,18 @@ export const BPChartData = (bloodpressures) => {
   return { dataHBP, dataLBP, dataHR, dataHBP2, dataLBP2, dataHR2 };
 };
 
+export const avgTimes = (readings, timesPD) => {
+  return readings.map((data) => {
+    const total =
+      (data.sugarB || 0) +
+      (data.sugarL || 0) +
+      (data.sugarD || 0) +
+      (data.sugarBB || 0) +
+      (data.sugarBed || 0);
+    return timesPD ? parseFloat((total / timesPD).toFixed(2)) : 0;
+  });
+};
+
 export const borderColor = (A1C) => {
   return A1C >= Number(1.0) && A1C <= Number(5.6)
     ? "rgba(0,0,255,1)"
@@ -68,16 +80,13 @@ export const borderColor = (A1C) => {
 };
 
 export const colaberated = (readings, timesPD, rate) => {
-  let A = 0,
-    B = 0,
-    C = 0,
-    D = 0,
-    E = 0,
-    totalTimes = 0,
+  let totalTimes = 0,
     totalTimes7 = 0,
+    totalTimes14 = 0,
     totalTimes30 = 0,
     totalTimes60 = 0,
-    totalTimes90 = 0;
+    totalTimes90 = 0,
+    totalTimes120 = 0;
 
   if (readings && readings.length > 0) {
     const lastIdx = readings.length - 1;
@@ -91,6 +100,16 @@ export const colaberated = (readings, timesPD, rate) => {
     const start7 = Math.max(0, readings.length - 7);
     for (let i = start7; i < readings.length; i++) {
       totalTimes7 +=
+        (readings[i].sugarB || 0) +
+        (readings[i].sugarL || 0) +
+        (readings[i].sugarD || 0) +
+        (readings[i].sugarBB || 0) +
+        (readings[i].sugarBed || 0);
+    }
+
+    const start14 = Math.max(0, readings.length - 14);
+    for (let i = start14; i < readings.length; i++) {
+      totalTimes14 +=
         (readings[i].sugarB || 0) +
         (readings[i].sugarL || 0) +
         (readings[i].sugarD || 0) +
@@ -129,7 +148,6 @@ export const colaberated = (readings, timesPD, rate) => {
     }
 
     const start120 = Math.max(0, readings.length - 120);
-    let totalTimes120 = 0;
     for (let i = start120; i < readings.length; i++) {
       totalTimes120 +=
         (readings[i].sugarB || 0) +
@@ -138,16 +156,15 @@ export const colaberated = (readings, timesPD, rate) => {
         (readings[i].sugarBB || 0) +
         (readings[i].sugarBed || 0);
     }
-
-    var _totalTimes120 = totalTimes120;
-  } else {
-    var _totalTimes120 = 0;
   }
   const Day1 = readings.map((data) => {
     return ((totalTimes / (timesPD * 1)) * rate).toFixed(2);
   });
   const Day7 = readings.map((data) => {
     return ((totalTimes7 / (timesPD * 7)) * rate).toFixed(2);
+  });
+  const Day14 = readings.map((data) => {
+    return ((totalTimes14 / (timesPD * 14)) * rate).toFixed(2);
   });
   const Day30 = readings.map((data) => {
     return ((totalTimes30 / (timesPD * 30)) * rate).toFixed(2);
@@ -159,20 +176,22 @@ export const colaberated = (readings, timesPD, rate) => {
     return ((totalTimes90 / (timesPD * 90)) * rate).toFixed(2);
   });
   const Day120 = readings.map((data) => {
-    return (((_totalTimes120 || 0) / (timesPD * 120)) * rate).toFixed(2);
+    return ((totalTimes120 / (timesPD * 120)) * rate).toFixed(2);
   });
   return {
     totalTimes,
     Day1,
     totalTimes7,
     Day7,
+    totalTimes14,
+    Day14,
     totalTimes30,
     Day30,
     totalTimes60,
     Day60,
     totalTimes90,
     Day90,
-    totalTimes120: _totalTimes120,
+    totalTimes120,
     Day120,
   };
 };
