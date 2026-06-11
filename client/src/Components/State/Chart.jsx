@@ -7,7 +7,31 @@ export const a1cOptions = {
       text: 'A1C Chart',
     },
     tooltip: {
-      enabled: false,
+      ...window.innerWidth < 900
+        ? {
+          enabled: true,
+          callbacks: {
+            title: (tooltipItems) => {
+              if (!tooltipItems || tooltipItems.length === 0) return '';
+              return `Day: ${tooltipItems[0].label}`;
+            },
+            label: (tooltipItem) => {
+              const a1c = tooltipItem.formattedValue;
+              const avgData = tooltipItem.dataset?.avg;
+              const avgValue = Array.isArray(avgData)
+                ? avgData[tooltipItem.dataIndex]
+                : avgData;
+              const lines = [`A1C: ${a1c} %`];
+              if (avgValue !== undefined && avgValue !== null && avgValue !== '') {
+                lines.push(`Avg: ${avgValue} mg / dl`);
+              }
+              return lines;
+            },
+          },
+        }
+        : {
+          enabled: false,
+        },
     },
     legend: {
       display: true,

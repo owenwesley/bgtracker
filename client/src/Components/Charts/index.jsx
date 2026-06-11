@@ -114,11 +114,16 @@ export const A1CChart = ({ chartDataColaberated, chartData }) => {
       </ul>
       <Route exact path="/a1cchart/colaberated">
         <StyledA1C>
-          {chartDataColaberated && chartDataColaberated.labels && chartDataColaberated.datasets ? (
+          {window.innerWidth < 900 ? (
+            <Bar data={chartDataColaberated} options={a1cOptions} />
+          ) : (
+            <Bar data={chartDataColaberated} options={a1cOptions} plugins={[barLabelPlugin]} />
+          )}
+          {/* {chartDataColaberated && chartDataColaberated.labels && chartDataColaberated.datasets ? (
             <Bar data={chartDataColaberated} options={a1cOptions} plugins={[barLabelPlugin]} />
           ) : (
             <div>No data</div>
-          )}
+          )} */}
         </StyledA1C>
       </Route>
       <Route path="/a1cchart/120days">
