@@ -1534,7 +1534,16 @@ export default class NavBar extends Component {
           readings[editIdx].chkMedsL ||
           readings[editIdx].chkMedsD ||
           readings[editIdx].chkMedsBed
-          ? this.handleMedicationChange(readings, editIdx, medications, user)
+          ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
+            readings,
+            editIdx,
+            medications,
+            totalAm,
+            user,
+            totalNoon,
+            totalEvening,
+            totalBed
+          ))
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -1742,7 +1751,16 @@ export default class NavBar extends Component {
           readings[editIdx].chkMedsL ||
           readings[editIdx].chkMedsD ||
           readings[editIdx].chkMedsBed
-          ? this.handleMedicationChange(readings, editIdx, medications, user)
+          ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
+            readings,
+            editIdx,
+            medications,
+            totalAm,
+            user,
+            totalNoon,
+            totalEvening,
+            totalBed
+          ))
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -2041,26 +2059,6 @@ export default class NavBar extends Component {
 
   handleMedicationChange = (e, name, i) => {
     const { value } = e.target;
-    const isNowChecked = value.checked;
-
-    // ONLY run if it is clicked to TRUE. 
-    // If it is false, or already handled, do nothing.
-    if (isNowChecked) {
-      ({ totalAm, totalNoon, totalEvening, totalBed } =
-        deductMeds(
-          this.state.readings,
-          i,
-          this.state.medications,
-          this.state.totalAm,
-          this.state.user,
-          this.state.totalNoon,
-          this.state.totalEvening,
-          this.state.totalBed
-        ));
-    } else {
-      // Optional: handle what happens when unchecking
-      console.log("Checkbox unchecked. Function skipped.");
-    }
 
     this.setState((state) => ({
       medications: state.medications.map((row, j) =>
