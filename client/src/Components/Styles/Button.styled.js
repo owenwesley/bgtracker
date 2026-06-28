@@ -1,5 +1,32 @@
+import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+export const AddButton = styled(Button)`
+  && {
+    background-color: ${({ readings }) =>
+    readings[readings.length - 1]?.chkMedsD ||
+      readings[readings.length - 1]?.chkMedsBed ?
+      "lightgreen" :
+      "lightcoral"
+  };
+    padding: 5px 5px;
+    margin-bottom: 10px;
+    border: none;
+    cursor:  ${({ readings }) =>
+    readings[readings.length - 1]?.chkMedsD ||
+      readings[readings.length - 1]?.chkMedsBed ?
+      "pointer" :
+      "not-allowed"
+  };
+    opacity:  ${({ readings }) =>
+    readings[readings.length - 1]?.chkMedsD ||
+      readings[readings.length - 1]?.chkMedsBed ?
+      "1" :
+      "0.5"
+  };
+  }
+`;
 
 export const StyledButton = styled(Link)`
   display: inline-block;

@@ -73,8 +73,8 @@ const barLabelPlugin = {
       if (meta.hidden) return;
 
       meta.data.forEach((bar, index) => {
-        const labelValue = dataset.avg || dataset.data[index];
-        const labelValue2 = dataset.a1c || dataset.data[index];
+        const labelValue = dataset.a1c || dataset.data[index];
+        const labelValue2 = dataset.avg || dataset.data[index];
         if (labelValue === undefined || labelValue === null) return;
 
         const fontSize = 12;
@@ -89,11 +89,11 @@ const barLabelPlugin = {
 
         const x = bar.x;
         const barCenterY = bar.y + bar.height / 2;
-        const lineSpacing = 16;
+        const lineSpacing = 24;
 
-        ctx.fillText(`A1C: ${labelValue2} %`,
+        ctx.fillText(`A1C: ${labelValue} %`,
           x, barCenterY - lineSpacing / 2);
-        ctx.fillText(`Avg: ${labelValue} mg / dl`,
+        ctx.fillText(`Avg: ${labelValue2} mg / dl`,
           x, barCenterY + lineSpacing / 2);
         ctx.restore();
       });
@@ -116,14 +116,11 @@ export const A1CChart = ({ chartDataColaberated, chartData }) => {
         <StyledA1C>
           {window.innerWidth < 900 ? (
             <Bar data={chartDataColaberated} options={a1cOptions} />
-          ) : (
-            <Bar data={chartDataColaberated} options={a1cOptions} plugins={[barLabelPlugin]} />
-          )}
-          {/* {chartDataColaberated && chartDataColaberated.labels && chartDataColaberated.datasets ? (
+          ) : window.innerWidth >= 900 ? (
             <Bar data={chartDataColaberated} options={a1cOptions} plugins={[barLabelPlugin]} />
           ) : (
             <div>No data</div>
-          )} */}
+          )}
         </StyledA1C>
       </Route>
       <Route path="/a1cchart/120days">

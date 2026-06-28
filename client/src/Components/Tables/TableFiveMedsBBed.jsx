@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Row from "./Row";
 import { TableContainer } from "@material-ui/core";
 import { useTableStyles } from "../Styles";
+import { AddButton } from "../Styles/Button.styled";
 
 const TableFiveMedsBB = ({
   add,
@@ -21,38 +22,50 @@ const TableFiveMedsBB = ({
   editIdx,
 }) => {
   const classes = useTableStyles(A1C);
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
+            {/* ROW 1: Categories and Spanning Columns */}
             <TableRow>
-              <TableCell></TableCell>
-              <TableCell colSpan="4" align="center">
+              {/* Spance 2 rows vertically */}
+              <TableCell rowSpan={2} align="center" style={{ fontWeight: 'bold' }}>
+                Date
+              </TableCell>
+              <TableCell colSpan={4} align="center" style={{ fontWeight: 'bold' }}>
                 Breakfast
               </TableCell>
-              <TableCell colSpan="3" align="center">
+              <TableCell colSpan={3} align="center" style={{ fontWeight: 'bold' }}>
                 Lunch
               </TableCell>
-              <TableCell colSpan="4" align="center">
+              <TableCell colSpan={4} align="center" style={{ fontWeight: 'bold' }}>
                 Dinner
               </TableCell>
-              <TableCell rowSpan="3" align="center">
-                <Button
-                  style={{ backgroundColor: "cyan", borderRadius: "50px" }}
-                  variant="contained"
-                  onClick={add}
-                >
+
+              {/* FIXED: Changed rowSpan from 3 to 2 to match the header structure */}
+              <TableCell rowSpan={2} align="center">
+                <AddButton
+                  readings={readings}
+                  onClick={readings[readings.length - 1]?.chkMedsD ||
+                    readings[readings.length - 1]?.chkMedsBed ?
+                    add : () => { }}>
                   Add
-                </Button>
+                </AddButton>
               </TableCell>
             </TableRow>
+
+            {/* ROW 2: Subheaders */}
             <TableRow>
-              {header.map((x, i) => (
-                <TableCell align="center" key={`thc-${i}`}>
-                  {x.name}
-                </TableCell>
-              ))}
+              {/* Date and Button are omitted here because rowSpan covers this space */}
+              {header
+                .filter(x => x.prop !== "date")
+                .map((x, i) => (
+                  <TableCell align="center" style={{ fontWeight: 'bold' }} key={`thc-${i}`}>
+                    {x.name}
+                  </TableCell>
+                ))}
             </TableRow>
           </TableHead>
           <TableBody>

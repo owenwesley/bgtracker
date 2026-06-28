@@ -16,7 +16,7 @@ import { StyledDiv } from "./Styles/StyledDiv.styled";
 import { StyledButton } from "./Styles/Button.styled";
 import { NavBarLink } from "./Styles/Link.styled";
 import { addBP, deleteBP, removeBloodPressure } from "./Utils/BloodPressures";
-import { bpLabels, Labels120 } from "./State/Labels";
+import { A1CLabels, bpLabels, Labels120 } from "./State/Labels";
 import {
   BGChartData,
   BPChartData,
@@ -28,7 +28,7 @@ import {
   colordataTimes,
   dataTimes,
 } from "./Utils/ChartData";
-import { addWeight, editWeight } from "./Utils/Weights";
+import { addWeight, deleteWeight, editWeight, removeWeight } from "./Utils/Weights";
 // import TableNutrition from './Tables/TableNutrition';
 // import TableNutritionTwo from './Tables/TableNutritionTwo';
 // import TableNutritionThree from './Tables/TableNutritionThree';
@@ -638,7 +638,7 @@ export default class NavBar extends Component {
 
     if (weights.length >= 90) {
       await deleteWeight(user, weights, editIdx);
-      removeweight(0, weights);
+      removeWeight(0, weights);
       this.setState({
         weights: [
           ...weights,
@@ -1534,16 +1534,7 @@ export default class NavBar extends Component {
           readings[editIdx].chkMedsL ||
           readings[editIdx].chkMedsD ||
           readings[editIdx].chkMedsBed
-          ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
-            readings,
-            editIdx,
-            medications,
-            totalAm,
-            user,
-            totalNoon,
-            totalEvening,
-            totalBed
-          ))
+          ? this.handleMedicationChange(readings, editIdx, medications, user)
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -1751,16 +1742,7 @@ export default class NavBar extends Component {
           readings[editIdx].chkMedsL ||
           readings[editIdx].chkMedsD ||
           readings[editIdx].chkMedsBed
-          ? ({ totalAm, totalNoon, totalEvening, totalBed } = await deductMeds(
-            readings,
-            editIdx,
-            medications,
-            totalAm,
-            user,
-            totalNoon,
-            totalEvening,
-            totalBed
-          ))
+          ? this.handleMedicationChange(readings, editIdx, medications, user)
           : await editReading(user, readings, editIdx);
       }
       this.findAvg();
@@ -2059,6 +2041,26 @@ export default class NavBar extends Component {
 
   handleMedicationChange = (e, name, i) => {
     const { value } = e.target;
+    const isNowChecked = value.checked;
+
+    // ONLY run if it is clicked to TRUE. 
+    // If it is false, or already handled, do nothing.
+    if (isNowChecked) {
+      ({ totalAm, totalNoon, totalEvening, totalBed } =
+        deductMeds(
+          this.state.readings,
+          i,
+          this.state.medications,
+          this.state.totalAm,
+          this.state.user,
+          this.state.totalNoon,
+          this.state.totalEvening,
+          this.state.totalBed
+        ));
+    } else {
+      // Optional: handle what happens when unchecking
+      console.log("Checkbox unchecked. Function skipped.");
+    }
 
     this.setState((state) => ({
       medications: state.medications.map((row, j) =>
@@ -2448,7 +2450,7 @@ export default class NavBar extends Component {
   }
 
   getA1CChartDataColaberated = () => {
-    const { A1CLabels, readings, rate } = this.state;
+    const { readings, rate } = this.state;
     const { timesPD } = this.state.preference;
     const {
       totalTimes,

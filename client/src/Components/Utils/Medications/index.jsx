@@ -26,167 +26,51 @@ export const deductMeds = async (
   totalEvening,
   totalBed
 ) => {
-  if (
-    (readings[editIdx].chkMedsB &&
-      !readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      !readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 0 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 0)
-  ) {
-    readings[editIdx].chkMedsB = 1;
+  // 1. Create a clean reference to the current reading object
+  const currentReading = readings[editIdx];
+
+  // 2. Coerce values to strict booleans (handles both true/false and 1/0 cleanly)
+  const hasB = !!currentReading.chkMedsB;
+  const hasL = !!currentReading.chkMedsL;
+  const hasD = !!currentReading.chkMedsD;
+  const hasBed = !!currentReading.chkMedsBed;
+
+  // 3. Evaluate grouped conditions cleanly
+  if (hasB && !hasL && !hasD && !hasBed) {
+    // AM / Breakfast Slot
+    currentReading.chkMedsB = 1;
     for (let i = 0; i < medications.length; i++) {
-      totalAm = medications[i].quantity - medications[i].am;
-      medications[i].quantity = totalAm;
+      medications[i].quantity -= medications[i].am;
       await editMeds(user, medications, i);
     }
-  } else if (
-    (readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      !readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 0)
-  ) {
-    readings[editIdx].chkMedsL = 1;
+    totalAm = medications[medications.length - 1]?.quantity; // Tracks final quantity if needed
+
+  } else if ((hasB && hasL && !hasD && !hasBed) || (!hasB && hasL && !hasD && !hasBed)) {
+    // Noon / Lunch Slot
+    currentReading.chkMedsL = 1;
     for (let i = 0; i < medications.length; i++) {
-      totalNoon = medications[i].quantity - medications[i].noon;
-      medications[i].quantity = totalNoon;
+      medications[i].quantity -= medications[i].noon;
       await editMeds(user, medications, i);
     }
-  } else if (
-    (!readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      !readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 0 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 0)
-  ) {
-    readings[editIdx].chkMedsL = 1;
+
+  } else if ((hasB && hasL && hasD && !hasBed) || (!hasB && !hasL && hasD && !hasBed)) {
+    // Evening / Dinner Slot
+    currentReading.chkMedsD = 1;
     for (let i = 0; i < medications.length; i++) {
-      totalNoon = medications[i].quantity - medications[i].noon;
-      medications[i].quantity = totalNoon;
+      medications[i].quantity -= medications[i].evening;
       await editMeds(user, medications, i);
     }
-  } else if (
-    (readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      readings[editIdx].chkMedsD &&
-      !readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 1 &&
-      readings[editIdx].chkMedsBed === 0)
-  ) {
-    readings[editIdx].chkMedsD = 1;
+
+  } else if (hasBed) {
+    // Bedtime Slot (Triggers if Bed is checked, regardless of others based on your rules)
+    currentReading.chkMedsBed = 1;
     for (let i = 0; i < medications.length; i++) {
-      totalEvening = medications[i].quantity - medications[i].evening;
-      medications[i].quantity = totalEvening;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (!readings[editIdx].chkMedsB &&
-      !readings[editIdx].chkMedsL &&
-      readings[editIdx].chkMedsD &&
-      !readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 0 &&
-      readings[editIdx].chkMedsL === 0 &&
-      readings[editIdx].chkMedsD === 1 &&
-      readings[editIdx].chkMedsBed === 0)
-  ) {
-    readings[editIdx].chkMedsD = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalEvening = medications[i].quantity - medications[i].evening;
-      medications[i].quantity = totalEvening;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (!readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 0 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 1)
-  ) {
-    readings[editIdx].chkMedsBed = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalBed = medications[i].quantity - medications[i].bed;
-      medications[i].quantity = totalBed;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (readings[editIdx].chkMedsB &&
-      !readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 0 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 1)
-  ) {
-    readings[editIdx].chkMedsBed = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalBed = medications[i].quantity - medications[i].bed;
-      medications[i].quantity = totalBed;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (!readings[editIdx].chkMedsB &&
-      !readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 0 &&
-      readings[editIdx].chkMedsL === 0 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 1)
-  ) {
-    readings[editIdx].chkMedsBed = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalBed = medications[i].quantity - medications[i].bed;
-      medications[i].quantity = totalBed;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      !readings[editIdx].chkMedsD &&
-      readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 0 &&
-      readings[editIdx].chkMedsBed === 1)
-  ) {
-    readings[editIdx].chkMedsBed = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalBed = medications[i].quantity - medications[i].bed;
-      medications[i].quantity = totalBed;
-      await editMeds(user, medications, i);
-    }
-  } else if (
-    (readings[editIdx].chkMedsB &&
-      readings[editIdx].chkMedsL &&
-      readings[editIdx].chkMedsD &&
-      readings[editIdx].chkMedsBed) ||
-    (readings[editIdx].chkMedsB === 1 &&
-      readings[editIdx].chkMedsL === 1 &&
-      readings[editIdx].chkMedsD === 1 &&
-      readings[editIdx].chkMedsBed === 1)
-  ) {
-    readings[editIdx].chkMedsBed = 1;
-    for (let i = 0; i < medications.length; i++) {
-      totalBed = medications[i].quantity - medications[i].bed;
-      medications[i].quantity = totalBed;
+      medications[i].quantity -= medications[i].bed;
       await editMeds(user, medications, i);
     }
   }
+
+  // 4. Save and return data
   await editReading(user, readings, editIdx);
   return { totalAm, totalNoon, totalEvening, totalBed };
 };

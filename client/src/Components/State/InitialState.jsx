@@ -1,6 +1,5 @@
-import { A1CLabels } from "./A1CLabels";
 import { Bloodpressure } from "./Bloodpressure";
-import { bpLabels, Labels120 } from "./Labels";
+import { A1CLabels, bpLabels, Labels120 } from "./Labels";
 import { Medication } from "./Medication";
 import { Nutrition } from "./Nutrition";
 import { Preference } from "./Preference";
