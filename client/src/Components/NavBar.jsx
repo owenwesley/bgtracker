@@ -2546,7 +2546,7 @@ export default class NavBar extends Component {
 
     return this.setState({
       a1cChartData: {
-        labels: Labels120,
+        labels: Labels120(readings),
         datasets: [
           {
             label: "A1C",
