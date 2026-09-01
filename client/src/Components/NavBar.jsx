@@ -2566,7 +2566,7 @@ export default class NavBar extends Component {
 
     return this.setState({
       bgChartData: {
-        labels: Labels120,
+        labels: Labels120(readings),
         datasets: [
           {
             label: "Breakfast",
@@ -2685,7 +2685,7 @@ export default class NavBar extends Component {
 
     this.setState({
       bpChartData: {
-        labels: bpLabels,
+        labels: bpLabels(bloodpressures),
         datasets: [
           {
             label: "First SYS (Top BP)",
